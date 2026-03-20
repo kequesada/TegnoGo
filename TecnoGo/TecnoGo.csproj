@@ -82,6 +82,12 @@
     <Compile Include="Layers\UI\Mantenimientos\FrmTipoDispositivo.Designer.cs">
       <DependentUpon>FrmTipoDispositivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layers\UI\Procesos\FrmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Procesos\FrmFacturacion.Designer.cs">
+      <DependentUpon>FrmFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Layers\UI\Mantenimientos\FrmClientes.resx">
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\Mantenimientos\FrmTipoDispositivo.resx">
       <DependentUpon>FrmTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Procesos\FrmFacturacion.resx">
+      <DependentUpon>FrmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,7 +142,6 @@
     <Folder Include="Layers\Entities\DTO\" />
     <Folder Include="Layers\Interfaces\" />
     <Folder Include="Layers\Persistencia\" />
-    <Folder Include="Layers\UI\Procesos\" />
     <Folder Include="Layers\UI\Reportes\" />
     <Folder Include="Layers\UI\Seguridad\" />
     <Folder Include="Util\" />
@@ -158,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
