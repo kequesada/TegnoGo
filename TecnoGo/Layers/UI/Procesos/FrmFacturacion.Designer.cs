@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacturacion));
             this.tspPrincipal = new System.Windows.Forms.ToolStrip();
-            this.sttInferior = new System.Windows.Forms.StatusStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbBanco = new System.Windows.Forms.ComboBox();
@@ -51,23 +54,25 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtImpuesto = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtImpuesto = new System.Windows.Forms.TextBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,12 +81,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.sttInferior = new System.Windows.Forms.StatusStrip();
+            this.txtCambio = new System.Windows.Forms.ToolStripStatusLabel();
             this.tspPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -89,9 +90,10 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sttInferior.SuspendLayout();
             this.SuspendLayout();
             // 
             // tspPrincipal
@@ -105,18 +107,41 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1436, 34);
+            this.tspPrincipal.Size = new System.Drawing.Size(1436, 38);
             this.tspPrincipal.TabIndex = 9;
             this.tspPrincipal.Text = "toolStrip1";
             // 
-            // sttInferior
+            // btnNuevo
             // 
-            this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 920);
-            this.sttInferior.Name = "sttInferior";
-            this.sttInferior.Size = new System.Drawing.Size(1436, 22);
-            this.sttInferior.TabIndex = 10;
-            this.sttInferior.Text = "statusStrip1";
+            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(92, 33);
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(85, 33);
+            this.btnEditar.Text = "Editar";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
+            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(88, 33);
+            this.btnBorrar.Text = "Borrar";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(73, 33);
+            this.btnSalir.Text = "Salir";
             // 
             // groupBox1
             // 
@@ -354,6 +379,53 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 248);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(175, 199);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(207, 26);
+            this.txtTotal.TabIndex = 72;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 210);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(164, 20);
+            this.label8.TabIndex = 71;
+            this.label8.Text = "Total";
+            // 
+            // txtImpuesto
+            // 
+            this.txtImpuesto.Location = new System.Drawing.Point(175, 150);
+            this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.Size = new System.Drawing.Size(207, 26);
+            this.txtImpuesto.TabIndex = 70;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 161);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 20);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Impuesto";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 112);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(164, 20);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Cantidad";
+            // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
@@ -391,23 +463,21 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "Id Factura";
             // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 112);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(164, 20);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "Cantidad";
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(175, 101);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(207, 26);
             this.numericUpDown1.TabIndex = 68;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.button1.Location = new System.Drawing.Point(454, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 43);
+            this.button1.TabIndex = 73;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -418,6 +488,14 @@
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Firma Cliente";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(14, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(517, 106);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -463,31 +541,6 @@
             this.Estado.Name = "Estado";
             this.Estado.Width = 150;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 161);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 20);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Impuesto";
-            // 
-            // txtImpuesto
-            // 
-            this.txtImpuesto.Location = new System.Drawing.Point(175, 150);
-            this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(207, 26);
-            this.txtImpuesto.TabIndex = 70;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(175, 199);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(207, 26);
-            this.txtTotal.TabIndex = 72;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -503,17 +556,6 @@
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(849, 282);
             this.dataGridView2.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 210);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 20);
-            this.label8.TabIndex = 71;
-            this.label8.Text = "Total";
             // 
             // IdProducto
             // 
@@ -586,60 +628,29 @@
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // sttInferior
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(14, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(517, 106);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.sttInferior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtCambio});
+            this.sttInferior.Location = new System.Drawing.Point(0, 910);
+            this.sttInferior.Name = "sttInferior";
+            this.sttInferior.Size = new System.Drawing.Size(1436, 32);
+            this.sttInferior.TabIndex = 23;
+            this.sttInferior.Text = "statusStrip1";
             // 
-            // button1
+            // txtCambio
             // 
-            this.button1.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.button1.Location = new System.Drawing.Point(454, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 43);
-            this.button1.TabIndex = 73;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
-            this.btnNuevo.Text = "Nuevo";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(85, 29);
-            this.btnEditar.Text = "Editar";
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
-            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
-            this.btnBorrar.Text = "Borrar";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 29);
-            this.btnSalir.Text = "Salir";
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Size = new System.Drawing.Size(179, 25);
+            this.txtCambio.Text = "toolStripStatusLabel1";
             // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 942);
+            this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -648,11 +659,11 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.tspPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFacturacion";
             this.Text = "Proceso Facturación";
+            this.Load += new System.EventHandler(this.FrmFacturacion_Load);
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -663,9 +674,11 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.sttInferior.ResumeLayout(false);
+            this.sttInferior.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,7 +691,6 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnBorrar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.StatusStrip sttInferior;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox cmbBanco;
@@ -726,5 +738,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.StatusStrip sttInferior;
+        private System.Windows.Forms.ToolStripStatusLabel txtCambio;
     }
 }
