@@ -39,6 +39,7 @@ namespace TecnoGo.Layers.UI
             IUsuarioBLL bllUsuario = new UsuarioBLL();
             epError.Clear();
             Usuario oUsuario = null;
+
             try
             {
 
@@ -50,7 +51,7 @@ namespace TecnoGo.Layers.UI
                 }
                 if (string.IsNullOrEmpty(this.txtPassword.Text))
                 {
-                    epError.SetError(txtPassword, "Contrasena requerida");
+                    epError.SetError(txtPassword, "Contraseña requerida");
                     this.txtPassword.Focus();
                     return;
                 }

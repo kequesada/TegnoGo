@@ -103,6 +103,7 @@
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(274, 34);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // marcasToolStripMenuItem1
             // 
@@ -110,6 +111,7 @@
             this.marcasToolStripMenuItem1.Name = "marcasToolStripMenuItem1";
             this.marcasToolStripMenuItem1.Size = new System.Drawing.Size(274, 34);
             this.marcasToolStripMenuItem1.Text = "Marcas";
+            this.marcasToolStripMenuItem1.Click += new System.EventHandler(this.marcasToolStripMenuItem1_Click);
             // 
             // tipoDeDispositivosToolStripMenuItem
             // 
@@ -117,6 +119,7 @@
             this.tipoDeDispositivosToolStripMenuItem.Name = "tipoDeDispositivosToolStripMenuItem";
             this.tipoDeDispositivosToolStripMenuItem.Size = new System.Drawing.Size(274, 34);
             this.tipoDeDispositivosToolStripMenuItem.Text = "Tipo de dispositivos";
+            this.tipoDeDispositivosToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDispositivosToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -124,6 +127,7 @@
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(274, 34);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem1
             // 
@@ -131,6 +135,7 @@
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(274, 34);
             this.productosToolStripMenuItem1.Text = "Productos";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -138,6 +143,7 @@
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(274, 34);
             this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // toolStripMenuItemProcesos
             // 
@@ -155,6 +161,7 @@
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.facturacionToolStripMenuItem.Text = "Facturación";
+            this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItemReportes
             // 
@@ -188,6 +195,7 @@
             this.toolStripMenuItemAcercaDe.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItemAcercaDe.Name = "toolStripMenuItemAcercaDe";
             this.toolStripMenuItemAcercaDe.Size = new System.Drawing.Size(48, 36);
+            this.toolStripMenuItemAcercaDe.Click += new System.EventHandler(this.toolStripMenuItemAcercaDe_Click);
             // 
             // FrmPrincipal
             // 
@@ -199,6 +207,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.Text = "TecnoGo";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.sttBarraInferior.ResumeLayout(false);
             this.sttBarraInferior.PerformLayout();
             this.mspMenuPrincipal.ResumeLayout(false);
