@@ -156,10 +156,10 @@
             this.sttBarraInferior.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.sttBarraInferior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripPbBarra});
-            this.sttBarraInferior.Location = new System.Drawing.Point(0, 553);
+            this.sttBarraInferior.Location = new System.Drawing.Point(0, 487);
             this.sttBarraInferior.Name = "sttBarraInferior";
             this.sttBarraInferior.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
-            this.sttBarraInferior.Size = new System.Drawing.Size(526, 28);
+            this.sttBarraInferior.Size = new System.Drawing.Size(526, 22);
             this.sttBarraInferior.TabIndex = 9;
             this.sttBarraInferior.Text = "statusStrip1";
             // 
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 581);
+            this.ClientSize = new System.Drawing.Size(526, 509);
             this.Controls.Add(this.sttBarraInferior);
             this.Controls.Add(this.pcbLogin);
             this.Controls.Add(this.btnSalir);

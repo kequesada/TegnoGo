@@ -42,6 +42,10 @@
             this.toolStripMenuItemProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItemReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.grToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +82,7 @@
             this.toolStripMenuItemAcercaDe});
             this.mspMenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mspMenuPrincipal.Name = "mspMenuPrincipal";
-            this.mspMenuPrincipal.Size = new System.Drawing.Size(800, 40);
+            this.mspMenuPrincipal.Size = new System.Drawing.Size(800, 42);
             this.mspMenuPrincipal.TabIndex = 2;
             this.mspMenuPrincipal.Text = "menuStrip1";
             // 
@@ -159,17 +163,50 @@
             // 
             this.facturacionToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.factura;
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(203, 34);
             this.facturacionToolStripMenuItem.Text = "Facturación";
             this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItemReportes
             // 
+            this.reportesToolStripMenuItemReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productoToolStripMenuItem,
+            this.facturaToolStripMenuItem,
+            this.clientesToolStripMenuItem1,
+            this.grToolStripMenuItem});
             this.reportesToolStripMenuItemReportes.Image = global::TecnoGo.Properties.Resources.reporte;
             this.reportesToolStripMenuItemReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItemReportes.Name = "reportesToolStripMenuItemReportes";
             this.reportesToolStripMenuItemReportes.Size = new System.Drawing.Size(130, 36);
             this.reportesToolStripMenuItemReportes.Text = "Reportes";
+            // 
+            // productoToolStripMenuItem
+            // 
+            this.productoToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.productosR;
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.productoToolStripMenuItem.Text = "Productos";
+            // 
+            // facturaToolStripMenuItem
+            // 
+            this.facturaToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.factura;
+            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.facturaToolStripMenuItem.Text = "Facturas";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Image = global::TecnoGo.Properties.Resources.clientesR;
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            // 
+            // grToolStripMenuItem
+            // 
+            this.grToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.graficos;
+            this.grToolStripMenuItem.Name = "grToolStripMenuItem";
+            this.grToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.grToolStripMenuItem.Text = "Gráfica";
             // 
             // administracionToolStripMenuItem
             // 
@@ -186,7 +223,7 @@
             this.usuariosToolStripMenuItemUsuarios.Image = global::TecnoGo.Properties.Resources.usuario;
             this.usuariosToolStripMenuItemUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.usuariosToolStripMenuItemUsuarios.Name = "usuariosToolStripMenuItemUsuarios";
-            this.usuariosToolStripMenuItemUsuarios.Size = new System.Drawing.Size(278, 42);
+            this.usuariosToolStripMenuItemUsuarios.Size = new System.Drawing.Size(190, 42);
             this.usuariosToolStripMenuItemUsuarios.Text = "Usuarios";
             // 
             // toolStripMenuItemAcercaDe
@@ -235,5 +272,9 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeDispositivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem grToolStripMenuItem;
     }
 }

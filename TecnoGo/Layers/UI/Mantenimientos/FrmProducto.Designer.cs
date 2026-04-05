@@ -48,8 +48,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picCliente = new System.Windows.Forms.PictureBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.txtCodigoInterno = new System.Windows.Forms.TextBox();
@@ -81,6 +79,8 @@
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -102,7 +102,7 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1833, 34);
+            this.tspPrincipal.Size = new System.Drawing.Size(1848, 34);
             this.tspPrincipal.TabIndex = 8;
             this.tspPrincipal.Text = "toolStrip1";
             // 
@@ -141,9 +141,9 @@
             // sttInferior
             // 
             this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 791);
+            this.sttInferior.Location = new System.Drawing.Point(0, 784);
             this.sttInferior.Name = "sttInferior";
-            this.sttInferior.Size = new System.Drawing.Size(1833, 22);
+            this.sttInferior.Size = new System.Drawing.Size(1848, 22);
             this.sttInferior.TabIndex = 9;
             this.sttInferior.Text = "statusStrip1";
             // 
@@ -225,18 +225,20 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Location = new System.Drawing.Point(983, 530);
+            this.groupBox2.Location = new System.Drawing.Point(832, 530);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 244);
+            this.groupBox2.Size = new System.Drawing.Size(246, 244);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documento";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(88, 20);
+            this.pictureBox1.Image = global::TecnoGo.Properties.Resources.documentoG;
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(52, 60);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(310, 204);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 129);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -245,42 +247,19 @@
             this.groupBox1.Controls.Add(this.picCliente);
             this.groupBox1.Location = new System.Drawing.Point(553, 530);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 244);
+            this.groupBox1.Size = new System.Drawing.Size(246, 244);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fotografía";
             // 
             // picCliente
             // 
-            this.picCliente.Location = new System.Drawing.Point(85, 25);
+            this.picCliente.Image = global::TecnoGo.Properties.Resources.imagenG;
+            this.picCliente.Location = new System.Drawing.Point(52, 60);
             this.picCliente.Name = "picCliente";
-            this.picCliente.Size = new System.Drawing.Size(310, 204);
+            this.picCliente.Size = new System.Drawing.Size(131, 132);
             this.picCliente.TabIndex = 0;
             this.picCliente.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(1552, 618);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 47);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(1408, 618);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(111, 47);
-            this.btnAceptar.TabIndex = 18;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -615,11 +594,35 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(534, 736);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(1271, 613);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(121, 57);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(1118, 613);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(121, 57);
+            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1833, 813);
+            this.ClientSize = new System.Drawing.Size(1848, 806);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox2);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TecnoGo.Enumeraciones;
 
 namespace TecnoGo.Layers.Entities
 {
@@ -21,7 +22,7 @@ namespace TecnoGo.Layers.Entities
         public byte[] DocumentoEspecificaciones { set; get; }
         public int CantidadStock { set; get; }
         public double Precio { set; get; }
-        public string Estado { set; get; }
+        public Estado Estado { set; get; }
     }
 
 }

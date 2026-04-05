@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TecnoGo.Layers.BLL;
 using TecnoGo.Layers.DAL;
+using TecnoGo.Layers.Entities;
 
 namespace TecnoGo.Layers.UI.Procesos
 {
     public partial class FrmFacturacion : Form
     {
         private double dolares;
+        private FacturaEncabezado factura = new FacturaEncabezado();
+        //private FacturaEncabezadoBLL facturaBLL = new FacturaEncabezadoBLL();
+
 
         public FrmFacturacion()
         {
@@ -42,7 +47,31 @@ namespace TecnoGo.Layers.UI.Procesos
         private void FrmFacturacion_Load(object sender, EventArgs e)
         {
             DolarBLL bllDolar = new DolarBLL();
-            txtCambio.Text = "Venta Dolar " + bllDolar.GetVentaDolar();
+            txtCambio.Text = "Venta dolar: ₡" + bllDolar.GetVentaDolar();
+        }
+
+        private void btnFirmar_Click(object sender, EventArgs e)
+        {
+            FrmFirma frm = new FrmFirma();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // Recibir la firma en bytes
+                byte[] firma = frm.nFirma;
+
+                /* Mostrar la firma en pantalla
+                using (var ms = new MemoryStream(firma))
+                {
+                    pictureBoxFirma.Image = Image.FromStream(ms);
+                }*/
+
+                // Guardar en el objeto factura
+                factura.FirmaCliente = firma;
+
+                // Guardar en la base de datos
+                //facturaBLL.GuardarFactura(factura);
+            }
+
         }
     }
 }

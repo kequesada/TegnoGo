@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using TecnoGo.Enumeraciones;
 
 namespace TecnoGo.Layers.Entities
 {
@@ -19,13 +20,13 @@ namespace TecnoGo.Layers.Entities
         public double TotalCRC { set; get; }
         public double TotalUSD { set; get; }
         public double TipoCambio { set; get; }
-        public string TipoPago { set; get; }
+        public TipoPago TipoPago { set; get; }
         public string Documento { set; get; }
-        public string Banco { set; get; }
-        public string TipoTarjeta { set; get; }
+        public Banco Banco { set; get; }
+        public TipoTarjeta TipoTarjeta { set; get; }
         public byte[] FirmaCliente { set; get; }
         public System.Web.UI.WebControls.Xml XmlFactura { set; get; }
-        public string Estado { set; get; }
+        public EstadoFactura Estado { set; get; }
+        public List<FacturaDetalle> ListaDetalles { get; set; } = new List<FacturaDetalle>();
     }
-
 }

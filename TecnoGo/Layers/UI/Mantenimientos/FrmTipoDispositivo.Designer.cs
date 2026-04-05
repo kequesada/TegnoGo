@@ -59,7 +59,7 @@
             // sttInferior
             // 
             this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 683);
+            this.sttInferior.Location = new System.Drawing.Point(0, 716);
             this.sttInferior.Name = "sttInferior";
             this.sttInferior.Size = new System.Drawing.Size(1593, 22);
             this.sttInferior.TabIndex = 5;
@@ -76,40 +76,44 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1593, 34);
+            this.tspPrincipal.Size = new System.Drawing.Size(1593, 41);
             this.tspPrincipal.TabIndex = 6;
             this.tspPrincipal.Text = "toolStrip1";
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(100, 36);
             this.btnNuevo.Text = "Nuevo";
             // 
             // btnEditar
             // 
             this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
+            this.btnEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(85, 29);
+            this.btnEditar.Size = new System.Drawing.Size(93, 36);
             this.btnEditar.Text = "Editar";
             // 
             // btnBorrar
             // 
             this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
+            this.btnBorrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
+            this.btnBorrar.Size = new System.Drawing.Size(96, 36);
             this.btnBorrar.Text = "Borrar";
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
+            this.btnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 29);
+            this.btnSalir.Size = new System.Drawing.Size(81, 36);
             this.btnSalir.Text = "Salir";
             // 
             // tableLayoutPanel1
@@ -126,7 +130,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtCodigoTipoDispositivo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtIdDispositivo, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 37);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 48);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
@@ -218,7 +222,7 @@
             this.CodigoTipoDispositivo,
             this.Descripcion,
             this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(616, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(616, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -257,9 +261,9 @@
             // 
             this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(1125, 633);
+            this.btnCancelar.Location = new System.Drawing.Point(1120, 645);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(117, 55);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -269,9 +273,9 @@
             // 
             this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(981, 633);
+            this.btnAceptar.Location = new System.Drawing.Point(975, 644);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(111, 47);
+            this.btnAceptar.Size = new System.Drawing.Size(117, 56);
             this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1593, 705);
+            this.ClientSize = new System.Drawing.Size(1593, 738);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dataGridView1);
