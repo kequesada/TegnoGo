@@ -113,10 +113,6 @@
     <Compile Include="Enumeraciones\TipoPago.cs" />
     <Compile Include="Enumeraciones\TipoTarjeta.cs" />
     <Compile Include="Extensions\ExceptionsExtention.cs" />
-    <Compile Include="Layers\Persistencia\DataBase.cs" />
-    <Compile Include="Layers\Persistencia\FactoryConexion.cs" />
-    <Compile Include="Layers\Persistencia\FactoryDataBase.cs" />
-    <Compile Include="Layers\Persistencia\IDataBase.cs" />
     <Compile Include="Layers\BLL\ClienteBLL.cs" />
     <Compile Include="Layers\BLL\DolarBLL.cs" />
     <Compile Include="Layers\BLL\FacturaBLL.cs" />
@@ -174,6 +170,10 @@
     <Compile Include="Layers\Interfaces\ITipoDispositivoDAL.cs" />
     <Compile Include="Layers\Interfaces\IUsuarioBLL.cs" />
     <Compile Include="Layers\Interfaces\IUsuarioDAL.cs" />
+    <Compile Include="Layers\Persistencia\DataBase.cs" />
+    <Compile Include="Layers\Persistencia\FactoryConexion.cs" />
+    <Compile Include="Layers\Persistencia\FactoryDatabase.cs" />
+    <Compile Include="Layers\Persistencia\IDataBase.cs" />
     <Compile Include="Layers\UI\AbxAcercade.cs">
       <SubType>Form</SubType>
     </Compile>

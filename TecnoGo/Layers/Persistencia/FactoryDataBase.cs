@@ -1,32 +1,60 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
-class FactoryDatabase
-{
-
-    public static IDataBase CreateDataBase(string pStringConnection)
+    class FactoryDatabase
     {
-        IDbConnection conexion = null;
-        try
+
+        public static IDataBase CreateDataBase(string pStringConnection)
         {
-            IDataBase db = new DataBase();
-            conexion = new SqlConnection(pStringConnection);
-            conexion.Open();
-            db._Conexion = conexion;
-            if (conexion.State != ConnectionState.Open)
+            IDbConnection conexion = null;
+            try
             {
-                throw new Exception("No se pudo abrir la Base de Datos, revise los parámetros de conexión! ");
+               IDataBase db = new DataBase();
+
+                conexion = new SqlConnection(pStringConnection);
+
+                conexion.Open();
+
+                db._Conexion = conexion;
+
+                if (conexion.State != ConnectionState.Open)
+                {
+
+                    throw new Exception("No se pudo abrir la Base de Datos, revise los parámetros de conexión! ");
+                }
+               return db;
             }
-            return db;
+            catch (Exception)
+            {
+                throw;
+            }
         }
-        catch (Exception)
+
+        public static IDataBase CreateDataBaseAsync(string pStringConnection)
         {
-            throw;
+            SqlConnection conexion = null;
+            try
+            {
+               IDataBase db = new DataBase();
+                conexion = new SqlConnection(pStringConnection);
+               db._Conexion = conexion;
+                if (conexion.State != ConnectionState.Open)
+                {
+                    throw new Exception("No se pudo abrir la Base de Datos, revise los parámetros de conexión! ");
+                }
+              return db;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
     }
-
-}
 

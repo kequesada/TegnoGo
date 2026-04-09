@@ -17,14 +17,7 @@ namespace TecnoGo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FrmLogin ofrmLogin = new FrmLogin();
-
-            ofrmLogin.Show();
-
-            if (ofrmLogin.DialogResult == DialogResult.OK)
-            {
-                Application.Run(new FrmPrincipal());
-            }
+            Application.Run(new FrmPrincipal());
         }
     }
 }
