@@ -25,16 +25,13 @@ namespace TecnoGo.Layers.UI
         public FrmPrincipal()
         {
             InitializeComponent();
-
-
-
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             try
             {
-
+                //Commit generados por terminal
                 Utils.CultureInfo();
                 this.Text = ConfigurationManager.AppSettings["NombreEmpresa"] + " " + Application.ProductName + " Versión:  " + Application.ProductVersion;
 
