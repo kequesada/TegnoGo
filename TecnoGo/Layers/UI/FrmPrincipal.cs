@@ -26,6 +26,8 @@ namespace TecnoGo.Layers.UI
         {
             InitializeComponent();
 
+
+
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
