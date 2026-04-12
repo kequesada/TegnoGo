@@ -13,30 +13,35 @@ using TecnoGo.Layers.Interfaces;
 
 namespace TecnoGo.Layers.BLL
 {
-    /*public class BLLProvincia : IProvinciaBLL
+    public class ProvinciaBLL : IProvinciaBLL
     {
         public bool Delete(int pId)
         {
             IProvinciaDAL dalProvincia = new ProvinciaDAL();
             return dalProvincia.Delete(pId);
+
         }
-        public List<Provincia> GetAll()
+
+        List<Provincia> IProvinciaBLL.GetAll()
         {
             IProvinciaDAL dalProvincia = new ProvinciaDAL();
             return dalProvincia.GetAll();
+
         }
-        public Provincia GetById(int pId)
+
+        Provincia IProvinciaBLL.GetById(int pId)
         {
             IProvinciaDAL dalProvincia = new ProvinciaDAL();
             return dalProvincia.GetById(pId);
         }
+
         /// <summary>
         /// Leerlo json de internet acceder https://github.com/lateraluz/Datos y buscar el archivo provincias.json
         /// </summary>
         /// <param name="pId"></param>
         /// <returns></returns>
         /// <exception cref=""></exception>
-        public Provincia GetProvinciaFromInternet(int pId)
+        Provincia IProvinciaBLL.GetProvinciaFromInternet(int pId)
         {
             Provincia provincia = null;
             string json = "";
@@ -57,8 +62,10 @@ namespace TecnoGo.Layers.BLL
             List<Provincia> lista = JsonSerializer.Deserialize<List<Provincia>>(json);
             provincia = lista.Find(p => p.IdProvincia == pId);
             return provincia;
+
         }
-        public Provincia Save(Provincia pProvincia)
+
+        Provincia IProvinciaBLL.Save(Provincia pProvincia)
         {
             IProvinciaDAL dalProvincia = new ProvinciaDAL();
             Provincia oProvincia = null;
@@ -67,7 +74,8 @@ namespace TecnoGo.Layers.BLL
             else
                 oProvincia = dalProvincia.Update(pProvincia);
             return oProvincia;
+
         }
-    }*/
+    }
 }
 

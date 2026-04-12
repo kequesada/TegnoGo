@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TecnoGo.Enumeraciones
 {
-    public enum Estado
+    public enum EstadoGeneral
     {
         Activo,
         Inactivo,

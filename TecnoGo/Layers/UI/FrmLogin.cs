@@ -13,6 +13,7 @@ using TecnoGo.Extensions;
 using TecnoGo.Layers.BLL;
 using TecnoGo.Layers.Entities;
 using TecnoGo.Layers.Interfaces;
+using TecnoGo.Layers.UI.Mantenimientos;
 using TecnoGo.Properties;
 
 namespace TecnoGo.Layers.UI
@@ -35,7 +36,7 @@ namespace TecnoGo.Layers.UI
 
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
-            // Debe validar los datos requeridos
+            /* Debe validar los datos requeridos
             IUsuarioBLL bllUsuario = new UsuarioBLL();
             epError.Clear();
             Usuario oUsuario = null;
@@ -97,7 +98,10 @@ namespace TecnoGo.Layers.UI
                 _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
                 MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+            }*/
+            FrmPrincipal oForm;
+            oForm = new FrmPrincipal();
+            oForm.Show();
         }
 
         private async Task<bool> EfectoConexion()

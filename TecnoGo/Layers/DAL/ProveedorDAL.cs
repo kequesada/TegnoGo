@@ -77,7 +77,7 @@ namespace TecnoGo.Layers.DAL
                             oProveedor.Id = int.Parse(reader["Id"].ToString());
                             oProveedor.Nombre = reader["Nombre"].ToString();
 
-                            Enum.TryParse(reader["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(reader["Estado"].ToString(), out EstadoGeneral estado);
                             oProveedor.Estado = estado;
 
                             lista.Add(oProveedor);
@@ -130,7 +130,7 @@ namespace TecnoGo.Layers.DAL
                         oProveedor.Id = int.Parse(dr["Id"].ToString());
                         oProveedor.Nombre = dr["Nombre"].ToString();
 
-                        Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                        Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                         oProveedor.Estado = estado;
 
                         lista.Add(oProveedor);
@@ -176,7 +176,7 @@ namespace TecnoGo.Layers.DAL
                             oProveedor.Id = int.Parse(dr["Id"].ToString());
                             oProveedor.Nombre = dr["Nombre"].ToString();
 
-                            Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                             oProveedor.Estado = estado;
                         }
                     }

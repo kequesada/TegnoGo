@@ -22,7 +22,7 @@ namespace TecnoGo.Layers.Entities
         public byte[] DocumentoEspecificaciones { set; get; }
         public int CantidadStock { set; get; }
         public double Precio { set; get; }
-        public Estado Estado { set; get; }
+        public EstadoGeneral Estado { set; get; }
     }
 
 }

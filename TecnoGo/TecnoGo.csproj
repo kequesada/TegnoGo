@@ -106,9 +106,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Enumeraciones\Banco.cs" />
-    <Compile Include="Enumeraciones\Estado.cs" />
+    <Compile Include="Enumeraciones\EstadoGeneral.cs" />
     <Compile Include="Enumeraciones\EstadoFactura.cs" />
-    <Compile Include="Enumeraciones\TipoEstado.cs" />
+    <Compile Include="Enumeraciones\EstadoInventario.cs" />
+    <Compile Include="Enumeraciones\EstadoMantenimiento.cs" />
     <Compile Include="Enumeraciones\TipoIdentificacion.cs" />
     <Compile Include="Enumeraciones\TipoPago.cs" />
     <Compile Include="Enumeraciones\TipoTarjeta.cs" />

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace TecnoGo.Enumeraciones
 {
-    public enum TipoEstado
+    public enum EstadoMantenimiento
     {
-        Entrada,
-        Salida
+        Nuevo,
+        Editar,
+        Borrar,
+        Ninguno
     }
 }

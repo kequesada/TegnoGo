@@ -77,7 +77,7 @@ namespace TecnoGo.Layers.DAL
                         {
                             Inventario oInventario = new Inventario();
                             oInventario.Id = int.Parse(reader["Id"].ToString());
-                            Enum.TryParse(reader["TipoEstado"].ToString(), out TipoEstado tipoEstado);
+                            Enum.TryParse(reader["TipoEstado"].ToString(), out EstadoInventario tipoEstado);
                             oInventario.TipoEstado = tipoEstado;
                             oInventario.IdProducto = int.Parse(reader["IdProducto"].ToString());
                             oInventario.Cantidad = int.Parse(reader["Cantidad"].ToString());
@@ -133,7 +133,7 @@ namespace TecnoGo.Layers.DAL
                     {
                         Inventario oInventario = new Inventario();
                         oInventario.Id = int.Parse(dr["Id"].ToString());
-                        Enum.TryParse(dr["TipoEstado"].ToString(), out TipoEstado tipoEstado);
+                        Enum.TryParse(dr["TipoEstado"].ToString(), out EstadoInventario tipoEstado);
                         oInventario.TipoEstado = tipoEstado;
                         oInventario.IdProducto = int.Parse(dr["IdProducto"].ToString());
                         oInventario.Cantidad = int.Parse(dr["Cantidad"].ToString());
@@ -183,7 +183,7 @@ namespace TecnoGo.Layers.DAL
                         {
                             oInventario = new Inventario();
                             oInventario.Id = int.Parse(dr["Id"].ToString());
-                            Enum.TryParse(dr["TipoEstado"].ToString(), out TipoEstado tipoEstado);
+                            Enum.TryParse(dr["TipoEstado"].ToString(), out EstadoInventario tipoEstado);
                             oInventario.TipoEstado = tipoEstado;
                             oInventario.IdProducto = int.Parse(dr["IdProducto"].ToString());
                             oInventario.Cantidad = int.Parse(dr["Cantidad"].ToString());

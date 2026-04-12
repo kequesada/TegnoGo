@@ -20,7 +20,7 @@ namespace TecnoGo.Layers.Entities
         public string Provincia { set; get; }
         public string Direccion { set; get; }
         public byte[] Fotografia { set; get; }
-        public Estado Estado { set; get; }
+        public EstadoGeneral Estado { set; get; }
         public override string ToString() => $"{Nombre} {Apellido1} {Apellido2}";
     }
 }

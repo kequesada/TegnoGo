@@ -86,7 +86,7 @@ namespace TecnoGo.Layers.DAL
                             oCliente.Provincia = reader["Provincia"].ToString();
                             oCliente.Direccion = reader["Direccion"].ToString();
                             oCliente.Fotografia = reader["Fotografia"] as byte[];
-                            oCliente.Estado = (Estado)Enum.Parse(typeof(Estado), reader["Estado"].ToString());
+                            oCliente.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
 
                             lista.Add(oCliente);
                         }
@@ -146,7 +146,7 @@ namespace TecnoGo.Layers.DAL
                         oCliente.Provincia = dr["Provincia"].ToString();
                         oCliente.Direccion = dr["Direccion"].ToString();
                         oCliente.Fotografia = dr["Fotografia"] as byte[];
-                        oCliente.Estado = (Estado)Enum.Parse(typeof(Estado), dr["Estado"].ToString());
+                        oCliente.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
 
                         lista.Add(oCliente);
                     }
@@ -200,7 +200,7 @@ namespace TecnoGo.Layers.DAL
                             oCliente.Provincia = dr["Provincia"].ToString();
                             oCliente.Direccion = dr["Direccion"].ToString();
                             oCliente.Fotografia = dr["Fotografia"] as byte[];
-                            oCliente.Estado = (Estado)Enum.Parse(typeof(Estado), dr["Estado"].ToString());
+                            oCliente.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
                         }
                     }
                 }

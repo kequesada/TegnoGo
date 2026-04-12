@@ -78,7 +78,7 @@ namespace TecnoGo.Layers.DAL
                             oTipo.Nombre = reader["Nombre"].ToString();
 
                             // Conversión string → enum
-                            Enum.TryParse(reader["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(reader["Estado"].ToString(), out EstadoGeneral estado);
                             oTipo.Estado = estado;
 
                             lista.Add(oTipo);
@@ -131,7 +131,7 @@ namespace TecnoGo.Layers.DAL
                         oTipo.Id = int.Parse(dr["Id"].ToString());
                         oTipo.Nombre = dr["Nombre"].ToString();
 
-                        Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                        Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                         oTipo.Estado = estado;
 
                         lista.Add(oTipo);
@@ -177,7 +177,7 @@ namespace TecnoGo.Layers.DAL
                             oTipo.Id = int.Parse(dr["Id"].ToString());
                             oTipo.Nombre = dr["Nombre"].ToString();
 
-                            Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                             oTipo.Estado = estado;
                         }
                     }

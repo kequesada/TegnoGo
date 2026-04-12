@@ -11,7 +11,7 @@ namespace TecnoGo.Layers.Entities
     {
         public int Id { set; get; }
         public string Nombre { set; get; }
-        public Estado Estado { set; get; }
+        public EstadoGeneral Estado { set; get; }
 
     }
 }

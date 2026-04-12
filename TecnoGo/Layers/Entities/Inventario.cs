@@ -10,7 +10,7 @@ namespace TecnoGo.Layers.Entities
     public class Inventario
     {
         public int Id { set; get; }
-        public TipoEstado TipoEstado { set; get; }
+        public EstadoInventario TipoEstado { set; get; }
         public int IdProducto { set; get; }
         public int Cantidad { set; get; }
         public string Observaciones { set; get; }

@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using TecnoGo.Extensions;
 using TecnoGo.Layers.UI.Mantenimientos;
 using TecnoGo.Layers.UI.Procesos;
+using TecnoGo.Layers.UI.Seguridad;
 using TecnoGo.Properties;
 
 namespace TecnoGo.Layers.UI
@@ -25,6 +26,7 @@ namespace TecnoGo.Layers.UI
         public FrmPrincipal()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -62,7 +64,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmClientes();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -79,7 +80,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmMarca();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -96,7 +96,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmTipoDispositivo();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -113,7 +112,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmProveedor();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -130,7 +128,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmProducto();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -147,7 +144,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmInventario();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -164,7 +160,6 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmFacturacion();
-                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -181,7 +176,22 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new AbxAcercade();
-                oForm.MdiParent = this;
+                oForm.Show();
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void usuariosToolStripMenuItemUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmSeguridad oForm;
+            try
+            {
+                oForm = new FrmSeguridad();
                 oForm.Show();
             }
             catch (Exception er)

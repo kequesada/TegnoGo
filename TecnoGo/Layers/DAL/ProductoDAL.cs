@@ -91,7 +91,7 @@ namespace TecnoGo.Layers.DAL
                             oProducto.CantidadStock = int.Parse(reader["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(reader["Precio"].ToString());
 
-                            Enum.TryParse(reader["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(reader["Estado"].ToString(), out EstadoGeneral estado);
                             oProducto.Estado = estado;
 
                             lista.Add(oProducto);
@@ -157,7 +157,7 @@ namespace TecnoGo.Layers.DAL
                         oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                         oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
-                        Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                        Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                         oProducto.Estado = estado;
 
                         lista.Add(oProducto);
@@ -217,7 +217,7 @@ namespace TecnoGo.Layers.DAL
                             oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
-                            Enum.TryParse(dr["Estado"].ToString(), out Estado estado);
+                            Enum.TryParse(dr["Estado"].ToString(), out EstadoGeneral estado);
                             oProducto.Estado = estado;
                         }
                     }

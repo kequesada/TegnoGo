@@ -132,7 +132,7 @@ namespace TecnoGo.Layers.DAL
                         oUsuario.Login = reader["Login"].ToString();
                         oUsuario.Password = reader["Password"].ToString();
                         oUsuario.Nombre = reader["Nombre"].ToString();
-                        oUsuario.Estado = (Estado)Enum.Parse(typeof(Estado), reader["Estado"].ToString());
+                        oUsuario.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
                     }
                 }
 
@@ -177,7 +177,7 @@ namespace TecnoGo.Layers.DAL
                         oUsuario.Login = reader["Login"].ToString();
                         oUsuario.Password = reader["Password"].ToString();
                         oUsuario.Nombre = reader["Nombre"].ToString();
-                        oUsuario.Estado = (Estado)Enum.Parse(typeof(Estado), reader["Estado"].ToString());
+                        oUsuario.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
                     }
                 }
 
@@ -220,7 +220,7 @@ namespace TecnoGo.Layers.DAL
                         oUsuario.Login = reader["Login"].ToString();
                         oUsuario.Password = reader["Password"].ToString();
                         oUsuario.Nombre = reader["Nombre"].ToString();
-                        oUsuario.Estado = (Estado)Enum.Parse(typeof(Estado), reader["Estado"].ToString());
+                        oUsuario.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
 
                         lista.Add(oUsuario);
                     }

@@ -76,7 +76,7 @@ namespace TecnoGo.Layers.DAL
                             Marca oMarca = new Marca();
                             oMarca.Id = int.Parse(reader["Id"].ToString());
                             oMarca.Nombre = reader["Nombre"].ToString();
-                            oMarca.Estado = (Estado)Enum.Parse(typeof(Estado), reader["Estado"].ToString());
+                            oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
 
                             lista.Add(oMarca);
                         }
@@ -127,7 +127,7 @@ namespace TecnoGo.Layers.DAL
                         Marca oMarca = new Marca();
                         oMarca.Id = int.Parse(dr["Id"].ToString());
                         oMarca.Nombre = dr["Nombre"].ToString();
-                        oMarca.Estado = (Estado)Enum.Parse(typeof(Estado), dr["Estado"].ToString());
+                        oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
 
                         lista.Add(oMarca);
                     }
@@ -171,7 +171,7 @@ namespace TecnoGo.Layers.DAL
                             oMarca = new Marca();
                             oMarca.Id = int.Parse(dr["Id"].ToString());
                             oMarca.Nombre = dr["Nombre"].ToString();
-                            oMarca.Estado = (Estado)Enum.Parse(typeof(Estado), dr["Estado"].ToString());
+                            oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
                         }
                     }
                 }

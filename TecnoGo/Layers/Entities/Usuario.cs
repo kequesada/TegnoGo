@@ -14,7 +14,7 @@ namespace TecnoGo.Layers.Entities
         public string Login { set; get; }
         public string Password { set; get; }
         public string Nombre { set; get; }
-        public Estado Estado { set; get; }
+        public EstadoGeneral Estado { set; get; }
 
         public override string ToString() => $"{Login.Trim()} - {Nombre.Trim()}";
     }
