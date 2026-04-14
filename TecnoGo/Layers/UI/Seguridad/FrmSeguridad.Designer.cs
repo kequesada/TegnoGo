@@ -36,6 +36,8 @@
             this.sttBarraInferior = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tplPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.trvUsuarios = new System.Windows.Forms.TreeView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tspBarraPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tplPanel.SuspendLayout();
@@ -64,6 +64,7 @@
             this.tspBarraPrincipal.Size = new System.Drawing.Size(978, 41);
             this.tspBarraPrincipal.TabIndex = 2;
             this.tspBarraPrincipal.Text = "toolStrip1";
+            this.tspBarraPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tspBarraPrincipal_ItemClicked);
             // 
             // toolStripBtnNuevo
             // 
@@ -138,6 +139,28 @@
             this.tplPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tplPanel.Size = new System.Drawing.Size(388, 227);
             this.tplPanel.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(104, 189);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(284, 28);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Estado";
             // 
             // lblLogin
             // 
@@ -229,32 +252,12 @@
             this.trvUsuarios.Size = new System.Drawing.Size(540, 342);
             this.trvUsuarios.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 193);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Estado";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(104, 189);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 28);
-            this.comboBox1.TabIndex = 10;
-            // 
             // FrmSeguridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(978, 418);
             this.Controls.Add(this.trvUsuarios);
             this.Controls.Add(this.groupBox1);
@@ -262,6 +265,7 @@
             this.Controls.Add(this.tspBarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSeguridad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creación de usuarios del sistema";
             this.tspBarraPrincipal.ResumeLayout(false);
             this.tspBarraPrincipal.PerformLayout();

@@ -30,14 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacturacion));
             this.tspPrincipal = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnFacturar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,7 +64,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnFirmar = new System.Windows.Forms.Button();
             this.tlbPanelTotalPagar = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -77,13 +84,6 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sttInferior = new System.Windows.Forms.StatusStrip();
             this.txtCambio = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnFirmar = new System.Windows.Forms.Button();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnFacturar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.tspPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -109,6 +109,33 @@
             this.tspPrincipal.TabIndex = 9;
             this.tspPrincipal.Text = "toolStrip1";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(100, 36);
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.Image = global::TecnoGo.Properties.Resources.facturar;
+            this.btnFacturar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnFacturar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(110, 36);
+            this.btnFacturar.Text = "Facturar";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
+            this.btnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(81, 36);
+            this.btnSalir.Text = "Salir";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
@@ -126,7 +153,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.47672F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.52328F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnBuscarProducto, 2, 0);
@@ -154,20 +181,29 @@
             this.label1.Location = new System.Drawing.Point(4, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 20);
+            this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 75;
             this.label1.Text = "Descripción";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(172, 52);
+            this.txtDescripcion.Location = new System.Drawing.Point(171, 52);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(301, 26);
             this.txtDescripcion.TabIndex = 76;
+            // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.Image = global::TecnoGo.Properties.Resources.buscar;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(478, 3);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(43, 43);
+            this.btnBuscarProducto.TabIndex = 74;
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // txtProducto
             // 
-            this.txtProducto.Location = new System.Drawing.Point(172, 3);
+            this.txtProducto.Location = new System.Drawing.Point(171, 3);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(207, 26);
             this.txtProducto.TabIndex = 5;
@@ -179,7 +215,7 @@
             this.label15.Location = new System.Drawing.Point(4, 14);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(161, 20);
+            this.label15.Size = new System.Drawing.Size(160, 20);
             this.label15.TabIndex = 16;
             this.label15.Text = "Producto";
             // 
@@ -190,16 +226,25 @@
             this.label10.Location = new System.Drawing.Point(4, 164);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 20);
+            this.label10.Size = new System.Drawing.Size(160, 20);
             this.label10.TabIndex = 67;
             this.label10.Text = "Cantidad";
             // 
             // numCantidad
             // 
-            this.numCantidad.Location = new System.Drawing.Point(172, 150);
+            this.numCantidad.Location = new System.Drawing.Point(171, 150);
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(207, 26);
             this.numCantidad.TabIndex = 68;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(478, 150);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(47, 43);
+            this.btnAgregarProducto.TabIndex = 73;
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -208,13 +253,13 @@
             this.label8.Location = new System.Drawing.Point(4, 112);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 20);
+            this.label8.Size = new System.Drawing.Size(160, 20);
             this.label8.TabIndex = 77;
             this.label8.Text = "Precio";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(172, 101);
+            this.txtPrecio.Location = new System.Drawing.Point(171, 101);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(207, 26);
             this.txtPrecio.TabIndex = 78;
@@ -225,7 +270,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.99339F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.00661F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIdProducto, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -268,13 +313,13 @@
             this.label7.Location = new System.Drawing.Point(4, 14);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 20);
+            this.label7.Size = new System.Drawing.Size(153, 20);
             this.label7.TabIndex = 33;
             this.label7.Text = "Id Factura";
             // 
             // txtIdProducto
             // 
-            this.txtIdProducto.Location = new System.Drawing.Point(165, 3);
+            this.txtIdProducto.Location = new System.Drawing.Point(164, 3);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.Size = new System.Drawing.Size(207, 26);
             this.txtIdProducto.TabIndex = 5;
@@ -286,7 +331,7 @@
             this.label3.Location = new System.Drawing.Point(4, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.Size = new System.Drawing.Size(153, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Cliente";
             // 
@@ -297,14 +342,14 @@
             this.label6.Location = new System.Drawing.Point(4, 406);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 20);
+            this.label6.Size = new System.Drawing.Size(153, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "Banco";
             // 
             // cmbBanco
             // 
             this.cmbBanco.FormattingEnabled = true;
-            this.cmbBanco.Location = new System.Drawing.Point(165, 395);
+            this.cmbBanco.Location = new System.Drawing.Point(164, 395);
             this.cmbBanco.Name = "cmbBanco";
             this.cmbBanco.Size = new System.Drawing.Size(207, 28);
             this.cmbBanco.TabIndex = 66;
@@ -316,7 +361,7 @@
             this.label4.Location = new System.Drawing.Point(4, 357);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 20);
+            this.label4.Size = new System.Drawing.Size(153, 20);
             this.label4.TabIndex = 62;
             this.label4.Text = "Tipo de tarjeta";
             // 
@@ -327,7 +372,7 @@
             this.label5.Location = new System.Drawing.Point(4, 308);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 20);
+            this.label5.Size = new System.Drawing.Size(153, 20);
             this.label5.TabIndex = 64;
             this.label5.Text = "Número de tarjeta";
             // 
@@ -338,7 +383,7 @@
             this.label2.Location = new System.Drawing.Point(4, 259);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.Size = new System.Drawing.Size(153, 20);
             this.label2.TabIndex = 60;
             this.label2.Text = "Tipo de pago";
             // 
@@ -349,7 +394,7 @@
             this.label11.Location = new System.Drawing.Point(4, 210);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 20);
+            this.label11.Size = new System.Drawing.Size(153, 20);
             this.label11.TabIndex = 58;
             this.label11.Text = "Estado";
             // 
@@ -360,29 +405,29 @@
             this.label13.Location = new System.Drawing.Point(4, 161);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(154, 20);
+            this.label13.Size = new System.Drawing.Size(153, 20);
             this.label13.TabIndex = 56;
             this.label13.Text = "Fecha de la factura";
             // 
             // cmbTipoTarjeta
             // 
             this.cmbTipoTarjeta.FormattingEnabled = true;
-            this.cmbTipoTarjeta.Location = new System.Drawing.Point(165, 346);
+            this.cmbTipoTarjeta.Location = new System.Drawing.Point(164, 346);
             this.cmbTipoTarjeta.Name = "cmbTipoTarjeta";
             this.cmbTipoTarjeta.Size = new System.Drawing.Size(207, 28);
             this.cmbTipoTarjeta.TabIndex = 63;
             // 
             // txtDatoPago
             // 
-            this.txtDatoPago.Location = new System.Drawing.Point(165, 297);
+            this.txtDatoPago.Location = new System.Drawing.Point(164, 297);
             this.txtDatoPago.Name = "txtDatoPago";
-            this.txtDatoPago.Size = new System.Drawing.Size(309, 26);
+            this.txtDatoPago.Size = new System.Drawing.Size(308, 26);
             this.txtDatoPago.TabIndex = 65;
             // 
             // cmbTipoPago
             // 
             this.cmbTipoPago.FormattingEnabled = true;
-            this.cmbTipoPago.Location = new System.Drawing.Point(165, 248);
+            this.cmbTipoPago.Location = new System.Drawing.Point(164, 248);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(207, 28);
             this.cmbTipoPago.TabIndex = 61;
@@ -390,16 +435,16 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(165, 199);
+            this.cmbEstado.Location = new System.Drawing.Point(164, 199);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(207, 28);
             this.cmbEstado.TabIndex = 59;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 150);
+            this.dateTimePicker1.Location = new System.Drawing.Point(164, 150);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(309, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(308, 26);
             this.dateTimePicker1.TabIndex = 57;
             // 
             // label9
@@ -409,23 +454,32 @@
             this.label9.Location = new System.Drawing.Point(4, 112);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 20);
+            this.label9.Size = new System.Drawing.Size(153, 20);
             this.label9.TabIndex = 67;
             this.label9.Text = "Nombre cliente";
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(165, 52);
+            this.txtIdCliente.Location = new System.Drawing.Point(164, 52);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(207, 26);
             this.txtIdCliente.TabIndex = 68;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(165, 101);
+            this.txtNombre.Location = new System.Drawing.Point(164, 101);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(309, 26);
+            this.txtNombre.Size = new System.Drawing.Size(308, 26);
             this.txtNombre.TabIndex = 69;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Image = global::TecnoGo.Properties.Resources.buscar;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(478, 52);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(43, 43);
+            this.btnBuscarCliente.TabIndex = 70;
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -438,6 +492,19 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
+            // 
+            // btnFirmar
+            // 
+            this.btnFirmar.Image = global::TecnoGo.Properties.Resources.firma;
+            this.btnFirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFirmar.Location = new System.Drawing.Point(6, 640);
+            this.btnFirmar.Name = "btnFirmar";
+            this.btnFirmar.Size = new System.Drawing.Size(105, 49);
+            this.btnFirmar.TabIndex = 20;
+            this.btnFirmar.Text = "Firmar";
+            this.btnFirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFirmar.UseVisualStyleBackColor = true;
+            this.btnFirmar.Click += new System.EventHandler(this.btnFirmar_Click);
             // 
             // tlbPanelTotalPagar
             // 
@@ -623,77 +690,12 @@
             this.txtCambio.Size = new System.Drawing.Size(19, 25);
             this.txtCambio.Text = "-";
             // 
-            // btnFirmar
-            // 
-            this.btnFirmar.Image = global::TecnoGo.Properties.Resources.firma;
-            this.btnFirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFirmar.Location = new System.Drawing.Point(6, 640);
-            this.btnFirmar.Name = "btnFirmar";
-            this.btnFirmar.Size = new System.Drawing.Size(105, 49);
-            this.btnFirmar.TabIndex = 20;
-            this.btnFirmar.Text = "Firmar";
-            this.btnFirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFirmar.UseVisualStyleBackColor = true;
-            this.btnFirmar.Click += new System.EventHandler(this.btnFirmar_Click);
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.Image = global::TecnoGo.Properties.Resources.buscar;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(480, 3);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(43, 43);
-            this.btnBuscarProducto.TabIndex = 74;
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(480, 150);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(47, 43);
-            this.btnAgregarProducto.TabIndex = 73;
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Image = global::TecnoGo.Properties.Resources.buscar;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(480, 52);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(43, 43);
-            this.btnBuscarCliente.TabIndex = 70;
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.btnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(100, 36);
-            this.btnNuevo.Text = "Nuevo";
-            // 
-            // btnFacturar
-            // 
-            this.btnFacturar.Image = global::TecnoGo.Properties.Resources.facturar;
-            this.btnFacturar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnFacturar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(110, 36);
-            this.btnFacturar.Text = "Facturar";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
-            this.btnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(81, 36);
-            this.btnSalir.Text = "Salir";
-            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1436, 778);
             this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.groupBox2);
@@ -701,6 +703,7 @@
             this.Controls.Add(this.tspPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proceso Facturación";
             this.Load += new System.EventHandler(this.FrmFacturacion_Load);
             this.tspPrincipal.ResumeLayout(false);

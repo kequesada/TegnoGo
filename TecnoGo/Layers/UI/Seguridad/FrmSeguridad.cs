@@ -16,5 +16,10 @@ namespace TecnoGo.Layers.UI.Seguridad
         {
             InitializeComponent();
         }
+
+        private void tspBarraPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

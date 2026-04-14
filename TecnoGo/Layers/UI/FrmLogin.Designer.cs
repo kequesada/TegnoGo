@@ -185,6 +185,7 @@
             this.Controls.Add(this.tlpPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceso";
             this.tlpPanel.ResumeLayout(false);
             this.tlpPanel.PerformLayout();
