@@ -88,7 +88,7 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1595, 34);
+            this.tspPrincipal.Size = new System.Drawing.Size(1595, 38);
             this.tspPrincipal.TabIndex = 3;
             this.tspPrincipal.Text = "toolStrip1";
             // 
@@ -97,7 +97,7 @@
             this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(92, 33);
             this.btnNuevo.Text = "Nuevo";
             // 
             // btnEditar
@@ -105,7 +105,7 @@
             this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(85, 29);
+            this.btnEditar.Size = new System.Drawing.Size(85, 33);
             this.btnEditar.Text = "Editar";
             // 
             // btnBorrar
@@ -113,7 +113,7 @@
             this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
             this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
+            this.btnBorrar.Size = new System.Drawing.Size(88, 33);
             this.btnBorrar.Text = "Borrar";
             // 
             // btnSalir
@@ -121,7 +121,7 @@
             this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 29);
+            this.btnSalir.Size = new System.Drawing.Size(73, 33);
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -136,11 +136,12 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.99339F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.00661F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel1.Controls.Add(this.rdbNacional, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.rdbExtranjero, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtIdentificacion, 1, 2);
@@ -164,7 +165,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 58);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 61);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
@@ -312,7 +313,7 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(180, 395);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(338, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(337, 26);
             this.txtCorreo.TabIndex = 27;
             // 
             // mkdTelefono
@@ -326,7 +327,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(180, 542);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(338, 26);
+            this.txtDireccion.Size = new System.Drawing.Size(337, 26);
             this.txtDireccion.TabIndex = 28;
             // 
             // cmbProvincia
@@ -395,7 +396,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::TecnoGo.Properties.Resources.buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(524, 101);
+            this.btnBuscar.Location = new System.Drawing.Point(523, 101);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(47, 43);
             this.btnBuscar.TabIndex = 36;

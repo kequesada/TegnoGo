@@ -156,10 +156,10 @@
             this.sttBarraInferior.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.sttBarraInferior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripPbBarra});
-            this.sttBarraInferior.Location = new System.Drawing.Point(0, 487);
+            this.sttBarraInferior.Location = new System.Drawing.Point(0, 472);
             this.sttBarraInferior.Name = "sttBarraInferior";
             this.sttBarraInferior.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
-            this.sttBarraInferior.Size = new System.Drawing.Size(526, 22);
+            this.sttBarraInferior.Size = new System.Drawing.Size(525, 22);
             this.sttBarraInferior.TabIndex = 9;
             this.sttBarraInferior.Text = "statusStrip1";
             // 
@@ -175,14 +175,15 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 509);
+            this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(525, 494);
             this.Controls.Add(this.sttBarraInferior);
             this.Controls.Add(this.pcbLogin);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tlpPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -64,6 +64,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmClientes();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -80,6 +81,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmMarca();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -96,6 +98,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmTipoDispositivo();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -112,6 +115,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmProveedor();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -128,6 +132,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmProducto();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -144,6 +149,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmInventario();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -160,6 +166,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmFacturacion();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -176,6 +183,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new AbxAcercade();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)
@@ -192,6 +200,7 @@ namespace TecnoGo.Layers.UI
             try
             {
                 oForm = new FrmSeguridad();
+                oForm.MdiParent = this;
                 oForm.Show();
             }
             catch (Exception er)

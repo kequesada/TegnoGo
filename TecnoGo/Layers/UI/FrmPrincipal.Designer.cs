@@ -82,7 +82,7 @@
             this.toolStripMenuItemAcercaDe});
             this.mspMenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mspMenuPrincipal.Name = "mspMenuPrincipal";
-            this.mspMenuPrincipal.Size = new System.Drawing.Size(800, 40);
+            this.mspMenuPrincipal.Size = new System.Drawing.Size(800, 42);
             this.mspMenuPrincipal.TabIndex = 2;
             this.mspMenuPrincipal.Text = "menuStrip1";
             // 
@@ -98,7 +98,7 @@
             this.mantenimientosToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.mantenimiento;
             this.mantenimientosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(188, 36);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(188, 38);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
             // clientesToolStripMenuItem
@@ -156,7 +156,7 @@
             this.toolStripMenuItemProcesos.Image = global::TecnoGo.Properties.Resources.proceso;
             this.toolStripMenuItemProcesos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItemProcesos.Name = "toolStripMenuItemProcesos";
-            this.toolStripMenuItemProcesos.Size = new System.Drawing.Size(131, 36);
+            this.toolStripMenuItemProcesos.Size = new System.Drawing.Size(131, 38);
             this.toolStripMenuItemProcesos.Text = "Procesos";
             // 
             // facturacionToolStripMenuItem
@@ -177,7 +177,7 @@
             this.reportesToolStripMenuItemReportes.Image = global::TecnoGo.Properties.Resources.reporte;
             this.reportesToolStripMenuItemReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItemReportes.Name = "reportesToolStripMenuItemReportes";
-            this.reportesToolStripMenuItemReportes.Size = new System.Drawing.Size(130, 36);
+            this.reportesToolStripMenuItemReportes.Size = new System.Drawing.Size(130, 38);
             this.reportesToolStripMenuItemReportes.Text = "Reportes";
             // 
             // productoToolStripMenuItem
@@ -215,7 +215,7 @@
             this.administracionToolStripMenuItem.Image = global::TecnoGo.Properties.Resources.seguridad;
             this.administracionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
-            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(141, 36);
+            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(141, 38);
             this.administracionToolStripMenuItem.Text = "Seguridad";
             // 
             // usuariosToolStripMenuItemUsuarios
@@ -232,7 +232,7 @@
             this.toolStripMenuItemAcercaDe.Image = global::TecnoGo.Properties.Resources.acercade;
             this.toolStripMenuItemAcercaDe.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItemAcercaDe.Name = "toolStripMenuItemAcercaDe";
-            this.toolStripMenuItemAcercaDe.Size = new System.Drawing.Size(48, 36);
+            this.toolStripMenuItemAcercaDe.Size = new System.Drawing.Size(48, 38);
             this.toolStripMenuItemAcercaDe.Click += new System.EventHandler(this.toolStripMenuItemAcercaDe_Click);
             // 
             // FrmPrincipal
@@ -243,6 +243,7 @@
             this.Controls.Add(this.mspMenuPrincipal);
             this.Controls.Add(this.sttBarraInferior);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             this.Text = "TecnoGo";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);

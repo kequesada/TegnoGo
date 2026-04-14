@@ -34,6 +34,7 @@
             this.toolStripBtnSalvarUsuario = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.sttBarraInferior = new System.Windows.Forms.StatusStrip();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tplPanel = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -48,6 +49,10 @@
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.trvUsuarios = new System.Windows.Forms.TreeView();
             this.tspBarraPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tplPanel.SuspendLayout();
             this.SuspendLayout();
@@ -96,20 +101,41 @@
             // sttBarraInferior
             // 
             this.sttBarraInferior.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.sttBarraInferior.Location = new System.Drawing.Point(0, 396);
+            this.sttBarraInferior.Location = new System.Drawing.Point(0, 494);
             this.sttBarraInferior.Name = "sttBarraInferior";
             this.sttBarraInferior.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
             this.sttBarraInferior.Size = new System.Drawing.Size(978, 22);
             this.sttBarraInferior.TabIndex = 3;
             this.sttBarraInferior.Text = "statusStrip1";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 41);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.trvUsuarios);
+            this.splitContainer1.Size = new System.Drawing.Size(978, 453);
+            this.splitContainer1.SplitterDistance = 451;
+            this.splitContainer1.TabIndex = 6;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.tplPanel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 44);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 342);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.Size = new System.Drawing.Size(402, 342);
+            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
             // 
@@ -247,20 +273,19 @@
             // 
             // trvUsuarios
             // 
-            this.trvUsuarios.Location = new System.Drawing.Point(426, 44);
+            this.trvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvUsuarios.Location = new System.Drawing.Point(0, 0);
             this.trvUsuarios.Name = "trvUsuarios";
-            this.trvUsuarios.Size = new System.Drawing.Size(540, 342);
-            this.trvUsuarios.TabIndex = 5;
+            this.trvUsuarios.Size = new System.Drawing.Size(523, 453);
+            this.trvUsuarios.TabIndex = 12;
             // 
             // FrmSeguridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(978, 418);
-            this.Controls.Add(this.trvUsuarios);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(978, 516);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.sttBarraInferior);
             this.Controls.Add(this.tspBarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -269,6 +294,11 @@
             this.Text = "Creación de usuarios del sistema";
             this.tspBarraPrincipal.ResumeLayout(false);
             this.tspBarraPrincipal.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tplPanel.ResumeLayout(false);
             this.tplPanel.PerformLayout();
@@ -284,8 +314,11 @@
         private System.Windows.Forms.ToolStripButton toolStripBtnSalvarUsuario;
         private System.Windows.Forms.ToolStripButton toolStripBtnSalir;
         private System.Windows.Forms.StatusStrip sttBarraInferior;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tplPanel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtNombre;
@@ -295,7 +328,5 @@
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.TreeView trvUsuarios;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
     }
 }

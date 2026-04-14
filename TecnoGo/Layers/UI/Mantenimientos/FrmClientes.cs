@@ -49,7 +49,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
         private async void LoadData()
         {
             IClienteBLL bllCliente = new ClienteBLL();
-            IProvinciaBLL bllProvincia = new ProvinciaBLL();
+            //IProvinciaBLL bllProvincia = new ProvinciaBLL();
             List<Provincia> lista = null;
             try
             {
@@ -70,7 +70,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                 // Cargar el combo
                 this.cmbProvincia.Items.Clear();
-                lista = bllProvincia.GetAll();
+                //lista = bllProvincia.GetAll();
                 foreach (Provincia oProvincia in lista)
                 {
                     this.cmbProvincia.Items.Add(oProvincia);
