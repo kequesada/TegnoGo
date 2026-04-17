@@ -63,7 +63,7 @@
             this.tlpPanel.RowCount = 2;
             this.tlpPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPanel.Size = new System.Drawing.Size(505, 111);
+            this.tlpPanel.Size = new System.Drawing.Size(424, 111);
             this.tlpPanel.TabIndex = 5;
             // 
             // lblUsuario
@@ -74,7 +74,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(4, 13);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(184, 29);
+            this.lblUsuario.Size = new System.Drawing.Size(153, 29);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -85,28 +85,28 @@
             this.lblContrasenna.Location = new System.Drawing.Point(4, 68);
             this.lblContrasenna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContrasenna.Name = "lblContrasenna";
-            this.lblContrasenna.Size = new System.Drawing.Size(184, 29);
+            this.lblContrasenna.Size = new System.Drawing.Size(153, 29);
             this.lblContrasenna.TabIndex = 1;
             this.lblContrasenna.Text = "Contraseña";
             // 
             // txtLogin
             // 
             this.txtLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLogin.Location = new System.Drawing.Point(196, 10);
+            this.txtLogin.Location = new System.Drawing.Point(165, 10);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(305, 35);
+            this.txtLogin.Size = new System.Drawing.Size(255, 35);
             this.txtLogin.TabIndex = 2;
             this.txtLogin.Text = "admin";
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(196, 65);
+            this.txtPassword.Location = new System.Drawing.Point(165, 65);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(305, 35);
+            this.txtPassword.Size = new System.Drawing.Size(255, 35);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "123456";
             // 
@@ -114,7 +114,7 @@
             // 
             this.pcbLogin.Image = global::TecnoGo.Properties.Resources.usuarioG;
             this.pcbLogin.InitialImage = null;
-            this.pcbLogin.Location = new System.Drawing.Point(121, 14);
+            this.pcbLogin.Location = new System.Drawing.Point(74, 14);
             this.pcbLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pcbLogin.Name = "pcbLogin";
             this.pcbLogin.Size = new System.Drawing.Size(277, 262);
@@ -127,10 +127,10 @@
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(282, 407);
+            this.btnSalir.Location = new System.Drawing.Point(251, 406);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(162, 61);
+            this.btnSalir.Size = new System.Drawing.Size(138, 61);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,10 +141,10 @@
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.Location = new System.Drawing.Point(74, 407);
+            this.btnAceptar.Location = new System.Drawing.Point(43, 406);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(162, 61);
+            this.btnAceptar.Size = new System.Drawing.Size(138, 61);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,7 +159,7 @@
             this.sttBarraInferior.Location = new System.Drawing.Point(0, 472);
             this.sttBarraInferior.Name = "sttBarraInferior";
             this.sttBarraInferior.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
-            this.sttBarraInferior.Size = new System.Drawing.Size(525, 22);
+            this.sttBarraInferior.Size = new System.Drawing.Size(441, 22);
             this.sttBarraInferior.TabIndex = 9;
             this.sttBarraInferior.Text = "statusStrip1";
             // 
@@ -177,7 +177,8 @@
             // 
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(525, 494);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(441, 494);
             this.Controls.Add(this.sttBarraInferior);
             this.Controls.Add(this.pcbLogin);
             this.Controls.Add(this.btnSalir);

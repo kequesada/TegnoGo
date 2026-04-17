@@ -35,6 +35,9 @@
             this.btnBorrar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.sttInferior = new System.Windows.Forms.StatusStrip();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,9 +54,11 @@
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoMovimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaMovimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.tspPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,7 +75,7 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1530, 41);
+            this.tspPrincipal.Size = new System.Drawing.Size(1270, 41);
             this.tspPrincipal.TabIndex = 7;
             this.tspPrincipal.Text = "toolStrip1";
             // 
@@ -113,11 +118,52 @@
             // sttInferior
             // 
             this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 710);
+            this.sttInferior.Location = new System.Drawing.Point(0, 467);
             this.sttInferior.Name = "sttInferior";
-            this.sttInferior.Size = new System.Drawing.Size(1530, 22);
+            this.sttInferior.Size = new System.Drawing.Size(1270, 22);
             this.sttInferior.TabIndex = 8;
             this.sttInferior.Text = "statusStrip1";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(301, 305);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(138, 61);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
+            this.btnAceptar.Location = new System.Drawing.Point(89, 305);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(138, 61);
+            this.btnAceptar.TabIndex = 14;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 41);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCancelar);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAceptar);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(1270, 426);
+            this.splitContainer1.SplitterDistance = 542;
+            this.splitContainer1.TabIndex = 16;
             // 
             // tableLayoutPanel1
             // 
@@ -135,7 +181,7 @@
             this.tableLayoutPanel1.Controls.Add(this.numCantidad, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 44);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
@@ -144,8 +190,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(541, 590);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(541, 249);
+            this.tableLayoutPanel1.TabIndex = 10;
             // 
             // comboBox1
             // 
@@ -247,12 +293,12 @@
             this.Producto,
             this.TipoMovimiento,
             this.FechaMovimiento});
-            this.dataGridView1.Location = new System.Drawing.Point(559, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(958, 590);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.Size = new System.Drawing.Size(704, 420);
+            this.dataGridView1.TabIndex = 11;
             // 
             // Movimiento
             // 
@@ -282,41 +328,13 @@
             this.FechaMovimiento.Name = "FechaMovimiento";
             this.FechaMovimiento.Width = 150;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(1011, 640);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(114, 57);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(871, 640);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(110, 57);
-            this.btnAceptar.TabIndex = 14;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1530, 732);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1270, 489);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.tspPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -325,6 +343,10 @@
             this.Text = "Mantenimiento Inventario";
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
@@ -342,6 +364,9 @@
         private System.Windows.Forms.ToolStripButton btnBorrar;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.StatusStrip sttInferior;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
@@ -358,7 +383,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoMovimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaMovimiento;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
     }
 }

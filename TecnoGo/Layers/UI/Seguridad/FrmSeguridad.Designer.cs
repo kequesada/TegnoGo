@@ -66,7 +66,7 @@
             this.toolStripBtnSalir});
             this.tspBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspBarraPrincipal.Name = "tspBarraPrincipal";
-            this.tspBarraPrincipal.Size = new System.Drawing.Size(978, 41);
+            this.tspBarraPrincipal.Size = new System.Drawing.Size(889, 41);
             this.tspBarraPrincipal.TabIndex = 2;
             this.tspBarraPrincipal.Text = "toolStrip1";
             this.tspBarraPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tspBarraPrincipal_ItemClicked);
@@ -101,10 +101,10 @@
             // sttBarraInferior
             // 
             this.sttBarraInferior.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.sttBarraInferior.Location = new System.Drawing.Point(0, 494);
+            this.sttBarraInferior.Location = new System.Drawing.Point(0, 324);
             this.sttBarraInferior.Name = "sttBarraInferior";
             this.sttBarraInferior.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
-            this.sttBarraInferior.Size = new System.Drawing.Size(978, 22);
+            this.sttBarraInferior.Size = new System.Drawing.Size(889, 22);
             this.sttBarraInferior.TabIndex = 3;
             this.sttBarraInferior.Text = "statusStrip1";
             // 
@@ -121,8 +121,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.trvUsuarios);
-            this.splitContainer1.Size = new System.Drawing.Size(978, 453);
-            this.splitContainer1.SplitterDistance = 451;
+            this.splitContainer1.Size = new System.Drawing.Size(889, 283);
+            this.splitContainer1.SplitterDistance = 409;
             this.splitContainer1.TabIndex = 6;
             // 
             // groupBox1
@@ -134,7 +134,7 @@
             this.groupBox1.Controls.Add(this.tplPanel);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(402, 342);
+            this.groupBox1.Size = new System.Drawing.Size(402, 281);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
@@ -276,7 +276,7 @@
             this.trvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvUsuarios.Location = new System.Drawing.Point(0, 0);
             this.trvUsuarios.Name = "trvUsuarios";
-            this.trvUsuarios.Size = new System.Drawing.Size(523, 453);
+            this.trvUsuarios.Size = new System.Drawing.Size(476, 283);
             this.trvUsuarios.TabIndex = 12;
             // 
             // FrmSeguridad
@@ -284,7 +284,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(978, 516);
+            this.ClientSize = new System.Drawing.Size(889, 346);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.sttBarraInferior);
             this.Controls.Add(this.tspBarraPrincipal);
