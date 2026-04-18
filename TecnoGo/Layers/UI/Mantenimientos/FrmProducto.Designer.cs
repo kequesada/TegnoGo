@@ -180,11 +180,11 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.Width = 150;
             // 
-            // Marca
+            // Proveedor
             // 
-            this.Marca.HeaderText = "Marca";
+            this.Marca.HeaderText = "Proveedor";
             this.Marca.MinimumWidth = 8;
-            this.Marca.Name = "Marca";
+            this.Marca.Name = "Proveedor";
             this.Marca.Width = 150;
             // 
             // Modelo
@@ -437,7 +437,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 20);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Marca";
+            this.label4.Text = "Proveedor";
             // 
             // txtNombreProducto
             // 

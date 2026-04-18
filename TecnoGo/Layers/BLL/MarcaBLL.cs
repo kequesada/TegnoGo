@@ -11,28 +11,28 @@ namespace TecnoGo.Layers.BLL
 {
     public class MarcaBLL : IMarcaBLL
     {
-        public List<Marca> GetByFilter(string pNombre)
+        public List<Proveedor> GetByFilter(string pNombre)
         {
             IMarcaDAL dalMarca = new MarcaDAL();
             return dalMarca.GetByFilter(pNombre);
         }
 
-        public Marca GetById(int pId)
+        public Proveedor GetById(int pId)
         {
             IMarcaDAL dalMarca = new MarcaDAL();
             return dalMarca.GetById(pId);
         }
 
-        public Task<IEnumerable<Marca>> GetAll()
+        public Task<IEnumerable<Proveedor>> GetAll()
         {
             IMarcaDAL dalMarca = new MarcaDAL();
             return dalMarca.GetAll();
         }
 
-        public Task<Marca> Save(Marca pMarca)
+        public Task<Proveedor> Save(Proveedor pMarca)
         {
             IMarcaDAL dalMarca = new MarcaDAL();
-            Task<Marca> oMarca = null;
+            Task<Proveedor> oMarca = null;
 
             if (dalMarca.GetById(pMarca.Id) == null)
                 oMarca = dalMarca.Save(pMarca);

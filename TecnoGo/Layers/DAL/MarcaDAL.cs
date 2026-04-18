@@ -27,7 +27,7 @@ namespace TecnoGo.Layers.DAL
             SqlCommand command = new SqlCommand();
             try
             {
-                string sql = @"Delete from Marca Where (Id = @Id)";
+                string sql = @"Delete from Proveedor Where (Id = @Id)";
                 command.Parameters.AddWithValue("@Id", pId);
                 command.CommandText = sql;
                 command.CommandType = CommandType.Text;
@@ -55,15 +55,15 @@ namespace TecnoGo.Layers.DAL
             }
         }
 
-        public async Task<IEnumerable<Marca>> GetAll()
+        public async Task<IEnumerable<Proveedor>> GetAll()
         {
-            List<Marca> lista = new List<Marca>();
+            List<Proveedor> lista = new List<Proveedor>();
             SqlCommand command = new SqlCommand();
             string msg = "";
 
             try
             {
-                string sql = @"Select Id,Nombre,Estado from Marca WITH (NOLOCK)";
+                string sql = @"Select Id,Nombre,Estado from Proveedor WITH (NOLOCK)";
                 command.CommandText = sql;
                 command.CommandType = CommandType.Text;
 
@@ -73,7 +73,7 @@ namespace TecnoGo.Layers.DAL
                     {
                         while (await reader.ReadAsync())
                         {
-                            Marca oMarca = new Marca();
+                            Proveedor oMarca = new Proveedor();
                             oMarca.Id = int.Parse(reader["Id"].ToString());
                             oMarca.Nombre = reader["Nombre"].ToString();
                             oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), reader["Estado"].ToString());
@@ -98,17 +98,17 @@ namespace TecnoGo.Layers.DAL
             }
         }
 
-        public List<Marca> GetByFilter(string pNombre)
+        public List<Proveedor> GetByFilter(string pNombre)
         {
             DataSet ds = null;
-            List<Marca> lista = new List<Marca>();
+            List<Proveedor> lista = new List<Proveedor>();
             SqlCommand command = new SqlCommand();
             string msg = "";
 
             try
             {
                 string sql = @"Select Id,Nombre,Estado 
-                           from Marca WITH (NOLOCK)
+                           from Proveedor WITH (NOLOCK)
                            Where Nombre like @filtro";
 
                 command.Parameters.AddWithValue("@filtro", pNombre);
@@ -124,7 +124,7 @@ namespace TecnoGo.Layers.DAL
                 {
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Marca oMarca = new Marca();
+                        Proveedor oMarca = new Proveedor();
                         oMarca.Id = int.Parse(dr["Id"].ToString());
                         oMarca.Nombre = dr["Nombre"].ToString();
                         oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
@@ -148,15 +148,15 @@ namespace TecnoGo.Layers.DAL
             }
         }
 
-        public Marca GetById(int pId)
+        public Proveedor GetById(int pId)
         {
-            Marca oMarca = null;
+            Proveedor oMarca = null;
             SqlCommand command = new SqlCommand();
             string msg = "";
 
             try
             {
-                string sql = @"Select Id,Nombre,Estado from Marca Where Id = @Id";
+                string sql = @"Select Id,Nombre,Estado from Proveedor Where Id = @Id";
 
                 command.Parameters.AddWithValue("@Id", pId);
                 command.CommandText = sql;
@@ -168,7 +168,7 @@ namespace TecnoGo.Layers.DAL
                     {
                         while (dr.Read())
                         {
-                            oMarca = new Marca();
+                            oMarca = new Proveedor();
                             oMarca.Id = int.Parse(dr["Id"].ToString());
                             oMarca.Nombre = dr["Nombre"].ToString();
                             oMarca.Estado = (EstadoGeneral)Enum.Parse(typeof(EstadoGeneral), dr["Estado"].ToString());
@@ -191,13 +191,13 @@ namespace TecnoGo.Layers.DAL
             }
         }
 
-        public async Task<Marca> Save(Marca pMarca)
+        public async Task<Proveedor> Save(Proveedor pMarca)
         {
             string msg = "";
-            Marca oMarca = null;
+            Proveedor oMarca = null;
             SqlCommand command = new SqlCommand();
 
-            string sql = @"Insert into Marca(Nombre,Estado)
+            string sql = @"Insert into Proveedor(Nombre,Estado)
                        values (@Nombre,@Estado)";
 
             try
@@ -235,14 +235,14 @@ namespace TecnoGo.Layers.DAL
             }
         }
 
-        public async Task<Marca> Update(Marca pMarca)
+        public async Task<Proveedor> Update(Proveedor pMarca)
         {
             string msg = "";
             int rows = 0;
             SqlCommand command = new SqlCommand();
-            Marca oMarca = new Marca();
+            Proveedor oMarca = new Proveedor();
 
-            string sql = @"Update Marca SET 
+            string sql = @"Update Proveedor SET 
                         Nombre = @Nombre,
                         Estado = @Estado
                        Where Id = @Id";

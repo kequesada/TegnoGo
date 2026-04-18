@@ -40,25 +40,19 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtCodigoTipoDispositivo = new System.Windows.Forms.TextBox();
-            this.txtIdDispositivo = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoTipoDispositivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // tspPrincipal
@@ -84,6 +78,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(100, 36);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -93,6 +88,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 36);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnBorrar
             // 
@@ -102,6 +98,7 @@
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(96, 36);
             this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnSalir
             // 
@@ -111,6 +108,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(81, 36);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // sttInferior
             // 
@@ -132,6 +130,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -143,6 +142,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // splitContainer1
             // 
@@ -158,7 +158,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvDatos);
             this.splitContainer1.Size = new System.Drawing.Size(1217, 428);
             this.splitContainer1.SplitterDistance = 493;
             this.splitContainer1.TabIndex = 18;
@@ -170,13 +170,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.99339F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.00661F));
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cmbEstado, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtCodigoTipoDispositivo, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdDispositivo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdProveedor, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEstado, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -199,11 +197,36 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Id Proveedor";
             // 
+            // txtIdProveedor
+            // 
+            this.txtIdProveedor.Location = new System.Drawing.Point(167, 3);
+            this.txtIdProveedor.Name = "txtIdProveedor";
+            this.txtIdProveedor.Size = new System.Drawing.Size(207, 26);
+            this.txtIdProveedor.TabIndex = 41;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 63);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 20);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Descripción";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(167, 52);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(314, 26);
+            this.txtDescripcion.TabIndex = 38;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 161);
+            this.label1.Location = new System.Drawing.Point(4, 112);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 20);
@@ -213,97 +236,20 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(167, 150);
+            this.cmbEstado.Location = new System.Drawing.Point(167, 101);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(207, 28);
             this.cmbEstado.TabIndex = 40;
             // 
-            // label7
+            // dgvDatos
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 112);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(156, 20);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Descripción";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 20);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Código proveedor";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(167, 101);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(314, 26);
-            this.txtDescripcion.TabIndex = 38;
-            // 
-            // txtCodigoTipoDispositivo
-            // 
-            this.txtCodigoTipoDispositivo.Location = new System.Drawing.Point(167, 52);
-            this.txtCodigoTipoDispositivo.Name = "txtCodigoTipoDispositivo";
-            this.txtCodigoTipoDispositivo.Size = new System.Drawing.Size(207, 26);
-            this.txtCodigoTipoDispositivo.TabIndex = 37;
-            // 
-            // txtIdDispositivo
-            // 
-            this.txtIdDispositivo.Location = new System.Drawing.Point(167, 3);
-            this.txtIdDispositivo.Name = "txtIdDispositivo";
-            this.txtIdDispositivo.Size = new System.Drawing.Size(207, 26);
-            this.txtIdDispositivo.TabIndex = 41;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdProveedor,
-            this.CodigoTipoDispositivo,
-            this.Descripcion,
-            this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(712, 420);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // IdProveedor
-            // 
-            this.IdProveedor.HeaderText = "Id Proveedor";
-            this.IdProveedor.MinimumWidth = 8;
-            this.IdProveedor.Name = "IdProveedor";
-            this.IdProveedor.Width = 150;
-            // 
-            // CodigoTipoDispositivo
-            // 
-            this.CodigoTipoDispositivo.HeaderText = "Código proveedor";
-            this.CodigoTipoDispositivo.MinimumWidth = 8;
-            this.CodigoTipoDispositivo.Name = "CodigoTipoDispositivo";
-            this.CodigoTipoDispositivo.Width = 160;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 8;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 150;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 8;
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 150;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(3, 0);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersWidth = 62;
+            this.dgvDatos.RowTemplate.Height = 28;
+            this.dgvDatos.Size = new System.Drawing.Size(712, 420);
+            this.dgvDatos.TabIndex = 11;
             // 
             // FrmProveedor
             // 
@@ -318,6 +264,7 @@
             this.Name = "FrmProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimirnto Proveedor";
+            this.Load += new System.EventHandler(this.FrmProveedor_Load);
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -326,7 +273,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,14 +295,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtCodigoTipoDispositivo;
-        private System.Windows.Forms.TextBox txtIdDispositivo;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoDispositivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox txtIdProveedor;
+        private System.Windows.Forms.DataGridView dgvDatos;
     }
 }

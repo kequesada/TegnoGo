@@ -9,11 +9,11 @@ namespace TecnoGo.Layers.Interfaces
 {
     public interface IMarcaDAL
     {
-        List<Marca> GetByFilter(string pNombre);
-        Marca GetById(int pId);
-        Task<IEnumerable<Marca>> GetAll();
-        Task<Marca> Save(Marca pMarca);
-        Task<Marca> Update(Marca pMarca);
+        List<Proveedor> GetByFilter(string pNombre);
+        Proveedor GetById(int pId);
+        Task<IEnumerable<Proveedor>> GetAll();
+        Task<Proveedor> Save(Proveedor pMarca);
+        Task<Proveedor> Update(Proveedor pMarca);
         Task<bool> Delete(int pId);
     }
 

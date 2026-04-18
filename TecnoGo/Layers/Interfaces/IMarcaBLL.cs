@@ -9,10 +9,10 @@ namespace TecnoGo.Layers.Interfaces
 {
     public interface IMarcaBLL
     {
-        List<Marca> GetByFilter(string pDescripcion);
-        Marca GetById(int pId);
-        Task<IEnumerable<Marca>> GetAll();
-        Task<Marca> Save(Marca pMarca);
+        List<Proveedor> GetByFilter(string pDescripcion);
+        Proveedor GetById(int pId);
+        Task<IEnumerable<Proveedor>> GetAll();
+        Task<Proveedor> Save(Proveedor pMarca);
         Task<bool> Delete(int pId);
     }
 }
