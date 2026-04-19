@@ -80,7 +80,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
             if (string.IsNullOrWhiteSpace(Identificacion))
             {
-                MessageBox.Show("Debe ingresar una cédula.");
+                MessageBox.Show("Debe ingresar un número de cédula.");
                 return;
             }
 
