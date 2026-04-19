@@ -38,7 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDispositivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,7 +153,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Identificacion,
             this.Nombre,
-            this.Marca,
+            this.Proveedor,
             this.Modelo,
             this.TipoDispositivo,
             this.Color,
@@ -182,10 +182,10 @@
             // 
             // Proveedor
             // 
-            this.Marca.HeaderText = "Proveedor";
-            this.Marca.MinimumWidth = 8;
-            this.Marca.Name = "Proveedor";
-            this.Marca.Width = 150;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.MinimumWidth = 8;
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.Width = 150;
             // 
             // Modelo
             // 
@@ -637,7 +637,6 @@
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Producto";
-            this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -707,5 +706,6 @@
         private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
     }
 }

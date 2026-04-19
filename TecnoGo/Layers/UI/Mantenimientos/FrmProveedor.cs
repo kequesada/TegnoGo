@@ -52,7 +52,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
             erp.Clear();
             this.txtIdProveedor.Clear();
             this.txtDescripcion.Clear();
-            this.cmbEstado.SelectedIndex = 0;
+            this.cmbEstado.SelectedIndex = -1;
 
             this.txtIdProveedor.Enabled = false;
             this.txtDescripcion.Enabled = false;

@@ -33,7 +33,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 LoadData();
             }
@@ -42,112 +42,60 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 string msg = "";
                 _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
                 MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            }*/
         }
 
-        private async void LoadData()
+        //Llenar los campos del nombre 
+        private void LlenarCamposDesdeNombreCompleto(string nombreCompleto)
         {
-            IClienteBLL bllCliente = new ClienteBLL();
-            //IProvinciaBLL bllProvincia = new ProvinciaBLL();
-            List<Provincia> lista = null;
-            try
+            string[] partes = nombreCompleto.Trim().Split(' ');
+
+            if (partes.Length < 2)
             {
-
-                // Cambiar el estado
-                this.ChangeState(EstadoMantenimiento.Ninguno);
-
-                // Configuracion del DataGridView para que se vea bien la imagen.
-                dgvDatos.AutoGenerateColumns = false;
-                // dgvDatos.RowTemplate.Height = 100;
-                dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                // Delay forzado
-                await Task.Delay(500);
-
-                // Cargar el DataGridView
-                this.dgvDatos.DataSource = await bllCliente.GetAll();
-
-                // Cargar el combo
-                this.cmbProvincia.Items.Clear();
-                //lista = bllProvincia.GetAll();
-                foreach (Provincia oProvincia in lista)
-                {
-                    this.cmbProvincia.Items.Add(oProvincia);
-                }
-                // Colocar el primero como default
-                this.cmbProvincia.SelectedIndex = 0;
+                txtNombre.Text = partes[0];
+                txtApellido1.Text = "";
+                txtApellido2.Text = "";
+                return;
             }
-            catch (Exception er)
+
+            if (partes.Length == 2)
             {
-                string msg = "";
-                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
-                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                txtNombre.Text = partes[0];
+                txtApellido1.Text = partes[1];
+                txtApellido2.Text = "";
+                return;
             }
+
+            // Para 3 o más partes
+            txtApellido2.Text = partes[partes.Length - 1];
+            txtApellido1.Text = partes[partes.Length - 2];
+
+            // Todo lo anterior son nombres
+            txtNombre.Text = string.Join(" ", partes.Take(partes.Length - 2));
         }
 
-        ErrorProvider erp = new ErrorProvider();
-
-        /// <summary>
-        /// Cambia el estado del proceso
-        /// </summary>
-        /// <param name="estado">Enum del proceso</param>
-        private void ChangeState(EstadoMantenimiento estado)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
-            erp.Clear();
-            this.txtIdentificacion.Clear();
-            this.txtNombre.Clear();
-            this.txtApellido1.Clear();
-            this.txtApellido2.Clear();
-            this.txtCorreo.Clear();
-            this.txtIdentificacion.Enabled = false;
-            this.txtNombre.Enabled = false;
-            this.txtApellido1.Enabled = false;
-            this.txtApellido2.Enabled = false;
-            this.txtCorreo.Enabled = false;
+            string Identificacion = txtIdentificacion.Text.Trim();
 
-            this.btnAceptar.Enabled = false;
-            this.btnCancelar.Enabled = false;
-            this.btnBuscar.Enabled = false;
-            this.cmbProvincia.Enabled = false;
-
-            // Coloca el primer item por defecto
-            if (cmbProvincia.Items.Count > 0)
-                this.cmbProvincia.SelectedIndex = 0;
-
-            switch (estado)
+            if (string.IsNullOrWhiteSpace(Identificacion))
             {
-                case EstadoMantenimiento.Nuevo:
-                    this.txtIdentificacion.Enabled = true;
-                    this.txtNombre.Enabled = true;
-                    this.txtApellido1.Enabled = true;
-                    this.txtApellido2.Enabled = true;
-                    this.txtCorreo.Enabled = true;
-                    this.cmbProvincia.Enabled = true;
-                    this.btnAceptar.Enabled = true;
-                    this.btnCancelar.Enabled = true;
-                    this.btnBuscar.Enabled = true;
-                    txtIdentificacion.Focus();
-                    break;
-                case EstadoMantenimiento.Editar:
-                    this.txtIdentificacion.Enabled = false;
-                    this.txtNombre.Enabled = true;
-                    this.txtApellido1.Enabled = true;
-                    this.txtApellido2.Enabled = true;
-                    this.txtCorreo.Enabled = true;
-                    this.cmbProvincia.Enabled = true;
-                    this.btnAceptar.Enabled = true;
-                    this.btnCancelar.Enabled = true;
-                    txtNombre.Focus();
-                    break;
-                case EstadoMantenimiento.Borrar:
-                    break;
-                case EstadoMantenimiento.Ninguno:
-                    break;
+                MessageBox.Show("Debe ingresar una cédula.");
+                return;
             }
-        }
 
+            // Consulta al API de Hacienda
+            HaciendaBLL api = new HaciendaBLL();
+            string nombreCompleto = await api.ObtenerNombrePorCedula(Identificacion);
+
+            if (string.IsNullOrEmpty(nombreCompleto))
+            {
+                MessageBox.Show("No se encontraron datos en Hacienda.");
+                return;
+            }
+
+            LlenarCamposDesdeNombreCompleto(nombreCompleto);
+        }
     }
 }
 

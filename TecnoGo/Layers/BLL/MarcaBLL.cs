@@ -11,41 +11,41 @@ namespace TecnoGo.Layers.BLL
 {
     public class MarcaBLL : IMarcaBLL
     {
-        public List<Proveedor> GetByFilter(string pNombre)
+        public List<Marca> GetByFilter(string pNombre)
         {
-            IMarcaDAL dalMarca = new MarcaDAL();
-            return dalMarca.GetByFilter(pNombre);
+            IMarcaDAL dal = new MarcaDAL();
+            return dal.GetByFilter(pNombre);
         }
 
-        public Proveedor GetById(int pId)
+        public Marca GetById(int pId)
         {
-            IMarcaDAL dalMarca = new MarcaDAL();
-            return dalMarca.GetById(pId);
+            IMarcaDAL dal = new MarcaDAL();
+            return dal.GetById(pId);
         }
 
-        public Task<IEnumerable<Proveedor>> GetAll()
+        public Task<IEnumerable<Marca>> GetAll()
         {
-            IMarcaDAL dalMarca = new MarcaDAL();
-            return dalMarca.GetAll();
+            IMarcaDAL dal = new MarcaDAL();
+            return dal.GetAll();
         }
 
-        public Task<Proveedor> Save(Proveedor pMarca)
+        public Task<Marca> Save(Marca pMarca)
         {
-            IMarcaDAL dalMarca = new MarcaDAL();
-            Task<Proveedor> oMarca = null;
+            IMarcaDAL dal = new MarcaDAL();
+            Task<Marca> oMarca = null;
 
-            if (dalMarca.GetById(pMarca.Id) == null)
-                oMarca = dalMarca.Save(pMarca);
+            if (dal.GetById(pMarca.Id) == null)
+                oMarca = dal.Save(pMarca);
             else
-                oMarca = dalMarca.Update(pMarca);
+                oMarca = dal.Update(pMarca);
 
             return oMarca;
         }
 
         public Task<bool> Delete(int pId)
         {
-            IMarcaDAL dalMarca = new MarcaDAL();
-            return dalMarca.Delete(pId);
+            IMarcaDAL dal = new MarcaDAL();
+            return dal.Delete(pId);
         }
     }
 }

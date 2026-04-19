@@ -16,10 +16,5 @@ namespace TecnoGo.Layers.UI.Mantenimientos
         {
             InitializeComponent();
         }
-
-        private void FrmProducto_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

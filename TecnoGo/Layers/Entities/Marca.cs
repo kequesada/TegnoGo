@@ -7,7 +7,7 @@ using TecnoGo.Enumeraciones;
 
 namespace TecnoGo.Layers.Entities
 {
-    internal class Marca
+    public class Marca
     {
         public int Id { set; get; }
         public string Nombre { set; get; }

@@ -40,11 +40,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtIdDispositivo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtIdDispositivo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -196,24 +196,12 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Id Dispositivo";
             // 
-            // label1
+            // txtIdDispositivo
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 112);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 20);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Estado";
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(182, 101);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(207, 28);
-            this.cmbEstado.TabIndex = 40;
+            this.txtIdDispositivo.Location = new System.Drawing.Point(182, 3);
+            this.txtIdDispositivo.Name = "txtIdDispositivo";
+            this.txtIdDispositivo.Size = new System.Drawing.Size(207, 26);
+            this.txtIdDispositivo.TabIndex = 41;
             // 
             // label7
             // 
@@ -233,12 +221,24 @@
             this.txtDescripcion.Size = new System.Drawing.Size(338, 26);
             this.txtDescripcion.TabIndex = 38;
             // 
-            // txtIdDispositivo
+            // label1
             // 
-            this.txtIdDispositivo.Location = new System.Drawing.Point(182, 3);
-            this.txtIdDispositivo.Name = "txtIdDispositivo";
-            this.txtIdDispositivo.Size = new System.Drawing.Size(207, 26);
-            this.txtIdDispositivo.TabIndex = 41;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 112);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 20);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Estado";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(182, 101);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(207, 28);
+            this.cmbEstado.TabIndex = 40;
             // 
             // dgvDatos
             // 
