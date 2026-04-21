@@ -106,6 +106,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 // Cargar el combo
                 cmbEstado.DataSource = Enum.GetValues(typeof(EstadoGeneral));
                 cmbEstado.SelectedIndex = 0;
+
             }
             catch (Exception er)
             {

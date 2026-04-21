@@ -123,7 +123,6 @@
     <Compile Include="Layers\BLL\PerfilBLL.cs" />
     <Compile Include="Layers\BLL\ProductoBLL.cs" />
     <Compile Include="Layers\BLL\ProveedorBLL.cs" />
-    <Compile Include="Layers\BLL\ProvinciaBLL.cs" />
     <Compile Include="Layers\BLL\TipoDispositivoBLL.cs" />
     <Compile Include="Layers\BLL\UsuarioBLL.cs" />
     <Compile Include="Layers\DAL\ClienteDAL.cs" />
@@ -134,7 +133,6 @@
     <Compile Include="Layers\DAL\PerfilDAL.cs" />
     <Compile Include="Layers\DAL\ProductoDAL.cs" />
     <Compile Include="Layers\DAL\ProveedorDAL.cs" />
-    <Compile Include="Layers\DAL\ProvinciaDAL.cs" />
     <Compile Include="Layers\DAL\TipoDispositivoDAL.cs" />
     <Compile Include="Layers\DAL\UsuarioDAL.cs" />
     <Compile Include="Layers\Entities\BCCR\Dolar.cs" />
@@ -168,8 +166,6 @@
     <Compile Include="Layers\Interfaces\IProductoDAL.cs" />
     <Compile Include="Layers\Interfaces\IProveedorBLL.cs" />
     <Compile Include="Layers\Interfaces\IProveedorDAL.cs" />
-    <Compile Include="Layers\Interfaces\IProvinciaBLL.cs" />
-    <Compile Include="Layers\Interfaces\IProvinciaDAL.cs" />
     <Compile Include="Layers\Interfaces\ITipoDispositivoBLL.cs" />
     <Compile Include="Layers\Interfaces\ITipoDispositivoDAL.cs" />
     <Compile Include="Layers\Interfaces\IUsuarioBLL.cs" />

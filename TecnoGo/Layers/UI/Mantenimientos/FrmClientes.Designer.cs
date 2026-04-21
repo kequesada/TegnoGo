@@ -39,12 +39,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,8 +63,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbTipoId = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pctCliente = new System.Windows.Forms.PictureBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -73,7 +75,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +102,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(100, 36);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -109,6 +112,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 36);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnBorrar
             // 
@@ -118,6 +122,7 @@
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(96, 36);
             this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnSalir
             // 
@@ -132,7 +137,7 @@
             // sttInferior
             // 
             this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 947);
+            this.sttInferior.Location = new System.Drawing.Point(0, 1022);
             this.sttInferior.Name = "sttInferior";
             this.sttInferior.Size = new System.Drawing.Size(1443, 22);
             this.sttInferior.TabIndex = 4;
@@ -154,7 +159,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvDatos);
-            this.splitContainer1.Size = new System.Drawing.Size(1418, 878);
+            this.splitContainer1.Size = new System.Drawing.Size(1418, 957);
             this.splitContainer1.SplitterDistance = 481;
             this.splitContainer1.TabIndex = 10;
             // 
@@ -165,24 +170,26 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.59275F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.40725F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.cmbEstado, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtCorreo, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mtbTelefono, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtDireccion, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.cmbProvincia, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 384);
+            this.tableLayoutPanel2.Controls.Add(this.txtTelefono, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 384);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(469, 195);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(469, 291);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // label15
@@ -202,14 +209,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(278, 26);
             this.txtCorreo.TabIndex = 27;
-            // 
-            // mtbTelefono
-            // 
-            this.mtbTelefono.AccessibleName = "";
-            this.mtbTelefono.Location = new System.Drawing.Point(184, 53);
-            this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(207, 26);
-            this.mtbTelefono.TabIndex = 29;
             // 
             // txtDireccion
             // 
@@ -259,27 +258,36 @@
             this.label20.TabIndex = 35;
             this.label20.Text = "Dirección exacta";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(184, 53);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(207, 26);
+            this.txtTelefono.TabIndex = 36;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(297, 744);
+            this.btnCancelar.Location = new System.Drawing.Point(292, 829);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(147, 74);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.Location = new System.Drawing.Point(297, 634);
+            this.btnAceptar.Location = new System.Drawing.Point(292, 722);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(147, 74);
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -303,7 +311,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbTipoId, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -447,33 +455,32 @@
             // cmbTipoId
             // 
             this.cmbTipoId.FormattingEnabled = true;
-            this.cmbTipoId.Items.AddRange(new object[] {
-            "Nacional",
-            "Extranjero"});
             this.cmbTipoId.Location = new System.Drawing.Point(184, 3);
             this.cmbTipoId.Name = "cmbTipoId";
             this.cmbTipoId.Size = new System.Drawing.Size(207, 28);
             this.cmbTipoId.TabIndex = 37;
+            this.cmbTipoId.SelectedIndexChanged += new System.EventHandler(this.cmbTipoId_SelectedIndexChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pctCliente);
-            this.groupBox2.Location = new System.Drawing.Point(11, 602);
+            this.groupBox2.Controls.Add(this.pbImagen);
+            this.groupBox2.Location = new System.Drawing.Point(3, 690);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(246, 253);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fotografía";
             // 
-            // pctCliente
+            // pbImagen
             // 
-            this.pctCliente.Image = global::TecnoGo.Properties.Resources.imagenG;
-            this.pctCliente.Location = new System.Drawing.Point(23, 32);
-            this.pctCliente.Name = "pctCliente";
-            this.pctCliente.Size = new System.Drawing.Size(128, 128);
-            this.pctCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pctCliente.TabIndex = 0;
-            this.pctCliente.TabStop = false;
+            this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
+            this.pbImagen.Location = new System.Drawing.Point(23, 32);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(128, 128);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbImagen.TabIndex = 0;
+            this.pbImagen.TabStop = false;
+            this.pbImagen.Click += new System.EventHandler(this.pctImagen_Click);
             // 
             // dgvDatos
             // 
@@ -485,13 +492,32 @@
             this.dgvDatos.Size = new System.Drawing.Size(926, 573);
             this.dgvDatos.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 215);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 20);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Estado";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(184, 203);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(207, 28);
+            this.cmbEstado.TabIndex = 38;
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1443, 969);
+            this.ClientSize = new System.Drawing.Size(1443, 1044);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.tspPrincipal);
@@ -512,7 +538,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -529,7 +555,7 @@
         private System.Windows.Forms.StatusStrip sttInferior;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pctCliente;
+        private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvDatos;
@@ -551,11 +577,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.MaskedTextBox mtbTelefono;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label1;
     }
 }

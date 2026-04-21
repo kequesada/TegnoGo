@@ -8,7 +8,7 @@ namespace TecnoGo.Enumeraciones
 {
     public enum TipoIdentificacion
     {
-        Cédula, 
-        Pasaporte
+        Nacional, 
+        Extranjero
     }
 }

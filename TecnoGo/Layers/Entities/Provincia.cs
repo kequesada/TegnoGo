@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TecnoGo.Layers.Entities
 {
-    class Provincia
+    public class Provincia
     {
         public int IdProvincia { set; get; }
         public string Descripcion { set; get; }
