@@ -207,7 +207,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                     this.txtIdDispositivo.Text = oDispositivo.Id.ToString();
                     this.txtDescripcion.Text = oDispositivo.Nombre;
-                    cmbEstado.SelectedValue = oDispositivo.Estado;
+                    cmbEstado.SelectedItem = oDispositivo.Estado;
                 }
                 else
                 {

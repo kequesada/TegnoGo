@@ -211,7 +211,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                     this.txtIdProveedor.Text = oProveedor.Id.ToString();
                     this.txtDescripcion.Text = oProveedor.Nombre;
-                    cmbEstado.SelectedValue = oProveedor.Estado;
+                    cmbEstado.SelectedItem = oProveedor.Estado;
                 }
                 else
                 {
