@@ -17,6 +17,7 @@ using TecnoGo.Layers.BLL;
 using TecnoGo.Layers.DAL;
 using TecnoGo.Layers.Entities;
 using TecnoGo.Layers.Interfaces;
+using TecnoGo.Util;
 
 namespace TecnoGo.Layers.UI.Mantenimientos
 {
@@ -209,18 +210,12 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 await Task.Delay(500);
 
                 // Cargar el DataGridView
-                //this.dgvDatos.DataSource = await bllCliente.GetAll();
-                var lista = await bllCliente.GetAll();
+                this.dgvDatos.DataSource = await bllCliente.GetAll();
 
-                var filtrada = lista.Select(x => new
-                {
-                    x.Id,
-                    x.Nombre,
-                    x.Apellido1,
-                    x.Apellido2
-                }).ToList();
-
-                this.dgvDatos.DataSource = filtrada;
+                dgvDatos.Columns["Fotografia"].Visible = false;
+                dgvDatos.Columns["Direccion"].Visible = false;
+                dgvDatos.Columns["Sexo"].Visible = false;
+                dgvDatos.Columns["Provincia"].Visible = false;
 
                 // Cargar los combos
                 var provincias = ProvinciasHelper.ObtenerProvincias();
@@ -267,6 +262,12 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 {
                     erp.SetError(txtIdentificacion, "El Id del cliente es requerido.");
                     txtIdentificacion.Focus();
+                    return;
+                }
+
+                if (!LeerDatos.Es_Email(this.txtCorreo))
+                {
+                    erp.SetError(this.txtCorreo, "Campo correo no es correcto");
                     return;
                 }
 
@@ -358,7 +359,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                     // Cambiar de estado
                     this.ChangeState(EstadoMantenimiento.Editar);
                     oCliente = this.dgvDatos.SelectedRows[0].DataBoundItem as Cliente;
-                   
+
                     this.txtIdentificacion.Text = oCliente.Id;
                     cmbTipoId.SelectedItem = oCliente.TipoIdentificacion;
                     this.txtNombre.Text = oCliente.Nombre;

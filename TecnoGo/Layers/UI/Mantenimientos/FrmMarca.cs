@@ -208,7 +208,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                     this.txtIdMarca.Text = oMarca.Id.ToString();
                     this.txtDescripcion.Text = oMarca.Nombre;
-                    cmbEstado.SelectedValue = oMarca.Estado;
+                    cmbEstado.SelectedItem = oMarca.Estado;
                 }
                 else
                 {
