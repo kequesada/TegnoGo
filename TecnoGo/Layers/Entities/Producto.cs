@@ -15,7 +15,7 @@ namespace TecnoGo.Layers.Entities
         public int IdMarca { set; get; }
         public string Modelo { set; get; }
         public int IdProveedor { set; get; }
-        public string Color { set; get; }
+        public Colores Color { set; get; }
         public string Caracteristicas { set; get; }
         public string Extras { set; get; }
         public byte[] Fotografia { set; get; }
