@@ -14,6 +14,7 @@ using TecnoGo.Extensions;
 using TecnoGo.Layers.BLL;
 using TecnoGo.Layers.Entities;
 using TecnoGo.Layers.Interfaces;
+using TecnoGo.Util;
 
 namespace TecnoGo.Layers.UI.Mantenimientos
 {
@@ -163,10 +164,11 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
         private async void LoadData()
         {
+            IProductoBLL bllProducto = new ProductoBLL();
+
             IMarcaBLL bllMarca = new MarcaBLL();
             ITipoDispositivoBLL bllDispositivo = new TipoDispositivoBLL();
             IProveedorBLL bllProveedor = new ProveedorBLL();
-            try
             try
             {
                 // Cambiar el estado
@@ -178,12 +180,13 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 // Delay forzado
                 await Task.Delay(500);
 
-                // Cargar el DataGridView
+                /* Cargar el DataGridView
+                this.dgvDatos.DataSource = await bllProducto.GetAll();
 
                 dgvDatos.Columns["Fotografia"].Visible = false;
                 dgvDatos.Columns["Documento"].Visible = false;
                 dgvDatos.Columns["Caracteristicas"].Visible = false;
-                dgvDatos.Columns["Extras"].Visible = false;
+                dgvDatos.Columns["Extras"].Visible = false;*/
 
                 // Cargar los combos
                 List<Marca> listaMarcas = (List<Marca>)await bllMarca.GetAll();
@@ -215,6 +218,79 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 string msg = "";
                 _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
                 MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.ChangeState(EstadoMantenimiento.Nuevo);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.ChangeState(EstadoMantenimiento.Ninguno);
+        }
+
+        private async void btnAceptar_Click(object sender, EventArgs e)
+        {
+            IProductoBLL bllProducto = new ProductoBLL();
+            erp = new ErrorProvider();
+            try
+            {
+                erp.Clear();
+                Producto oProducto = new Producto();
+
+                if (string.IsNullOrEmpty(txtIdProducto.Text))
+                {
+                    erp.SetError(txtIdProducto, "El Id del producto es requerido.");
+                    txtIdProducto.Focus();
+                    return;
+                }
+
+                oProducto.Id = int.Parse(this.txtIdProducto.Text);
+                oProducto.Nombre = this.txtNombre.Text;
+                oProducto.IdMarca = (Marca)cmbMarca.SelectedItem;
+                
+                oCliente.Apellido1 = this.txtApellido1.Text;
+                oCliente.Apellido2 = this.txtApellido2.Text;
+
+                if (rdbMasculino.Checked)
+                {
+                    oCliente.Sexo = "Masculino";
+                }
+                else if (rdbFemenino.Checked)
+                {
+                    oCliente.Sexo = "Femenino";
+                }
+
+                oCliente.Correo = this.txtCorreo.Text;
+                oCliente.Telefono = this.txtTelefono.Text;
+                oCliente.Provincia = cmbProvincia.Text;
+                oCliente.Direccion = this.txtDireccion.Text;
+                oCliente.Estado = (EstadoGeneral)cmbEstado.SelectedItem;
+
+                if (pbImagen.Tag != TecnoGo.Properties.Resources.imagenG)
+                {
+                    oCliente.Fotografia = (byte[])pbImagen.Tag;
+                }
+                else
+                {
+                    oCliente.Fotografia = null;
+                }
+
+                oCliente = await bllCliente.Save(oCliente);
+
+
+                if (oCliente != null)
+                    this.LoadData();
+
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

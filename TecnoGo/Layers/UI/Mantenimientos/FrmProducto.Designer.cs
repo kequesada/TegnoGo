@@ -104,6 +104,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(92, 29);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -151,7 +152,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(12, 60);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 52);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -180,6 +181,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -192,6 +194,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // groupBox2
             // 
@@ -207,9 +210,10 @@
             // 
             this.pbDocumento.Image = global::TecnoGo.Properties.Resources.documentoG;
             this.pbDocumento.ImageLocation = "";
-            this.pbDocumento.Location = new System.Drawing.Point(52, 60);
+            this.pbDocumento.Location = new System.Drawing.Point(58, 66);
             this.pbDocumento.Name = "pbDocumento";
-            this.pbDocumento.Size = new System.Drawing.Size(129, 129);
+            this.pbDocumento.Size = new System.Drawing.Size(128, 128);
+            this.pbDocumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbDocumento.TabIndex = 1;
             this.pbDocumento.TabStop = false;
             // 
@@ -226,9 +230,10 @@
             // pbImagen
             // 
             this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
-            this.pbImagen.Location = new System.Drawing.Point(52, 60);
+            this.pbImagen.Location = new System.Drawing.Point(58, 66);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(131, 132);
+            this.pbImagen.Size = new System.Drawing.Size(128, 128);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbImagen.TabIndex = 0;
             this.pbImagen.TabStop = false;
             // 
@@ -526,8 +531,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDocumento)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

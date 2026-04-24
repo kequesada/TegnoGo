@@ -64,7 +64,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
+                                  Caracteristicas,Extras,Fotografia,Documento,
                                   CantidadStock,Precio,Estado
                            from Producto WITH (NOLOCK)";
                 command.CommandText = sql;
@@ -83,16 +83,20 @@ namespace TecnoGo.Layers.DAL
                             oProducto.IdMarca = int.Parse(reader["IdMarca"].ToString());
                             oProducto.Modelo = reader["Modelo"].ToString();
                             oProducto.IdProveedor = int.Parse(reader["IdProveedor"].ToString());
-                            oProducto.Color = reader["Color"].ToString();
+
+                            Enum.TryParse(reader["Color"].ToString(), out Colores color);
+                            oProducto.Color = color;
+
                             oProducto.Caracteristicas = reader["Caracteristicas"].ToString();
                             oProducto.Extras = reader["Extras"].ToString();
                             oProducto.Fotografia = reader["Fotografia"] as byte[];
-                            oProducto.DocumentoEspecificaciones = reader["DocumentoEspecificaciones"] as byte[];
+                            oProducto.Documento = reader["Documento"] as byte[];
                             oProducto.CantidadStock = int.Parse(reader["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(reader["Precio"].ToString());
 
                             Enum.TryParse(reader["Estado"].ToString(), out EstadoGeneral estado);
                             oProducto.Estado = estado;
+
 
                             lista.Add(oProducto);
                         }
@@ -124,7 +128,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
+                                  Caracteristicas,Extras,Fotografia,Documento,
                                   CantidadStock,Precio,Estado
                            from Producto WITH (NOLOCK)
                            Where Nombre like @filtro";
@@ -149,11 +153,14 @@ namespace TecnoGo.Layers.DAL
                         oProducto.IdMarca = int.Parse(dr["IdMarca"].ToString());
                         oProducto.Modelo = dr["Modelo"].ToString();
                         oProducto.IdProveedor = int.Parse(dr["IdProveedor"].ToString());
-                        oProducto.Color = dr["Color"].ToString();
+
+                        Enum.TryParse(dr["Color"].ToString(), out Colores color);
+                        oProducto.Color = color;
+
                         oProducto.Caracteristicas = dr["Caracteristicas"].ToString();
                         oProducto.Extras = dr["Extras"].ToString();
                         oProducto.Fotografia = dr["Fotografia"] as byte[];
-                        oProducto.DocumentoEspecificaciones = dr["DocumentoEspecificaciones"] as byte[];
+                        oProducto.Documento = dr["Documento"] as byte[];
                         oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                         oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
@@ -188,7 +195,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
+                                  Caracteristicas,Extras,Fotografia,Documento,
                                   CantidadStock,Precio,Estado
                            from Producto Where Id = @Id";
 
@@ -209,11 +216,14 @@ namespace TecnoGo.Layers.DAL
                             oProducto.IdMarca = int.Parse(dr["IdMarca"].ToString());
                             oProducto.Modelo = dr["Modelo"].ToString();
                             oProducto.IdProveedor = int.Parse(dr["IdProveedor"].ToString());
-                            oProducto.Color = dr["Color"].ToString();
+
+                            Enum.TryParse(dr["Color"].ToString(), out Colores color);
+                            oProducto.Color = color;
+
                             oProducto.Caracteristicas = dr["Caracteristicas"].ToString();
                             oProducto.Extras = dr["Extras"].ToString();
                             oProducto.Fotografia = dr["Fotografia"] as byte[];
-                            oProducto.DocumentoEspecificaciones = dr["DocumentoEspecificaciones"] as byte[];
+                            oProducto.Documento = dr["Documento"] as byte[];
                             oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
@@ -246,10 +256,10 @@ namespace TecnoGo.Layers.DAL
 
             string sql = @"Insert into Producto(Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,
                                             Color,Caracteristicas,Extras,Fotografia,
-                                            DocumentoEspecificaciones,CantidadStock,Precio,Estado)
+                                            Documento,CantidadStock,Precio,Estado)
                        values (@Nombre,@IdTipoDispositivo,@IdMarca,@Modelo,@IdProveedor,
                                @Color,@Caracteristicas,@Extras,@Fotografia,
-                               @DocumentoEspecificaciones,@CantidadStock,@Precio,@Estado)";
+                               @Documento,@CantidadStock,@Precio,@Estado)";
 
             try
             {
@@ -262,7 +272,7 @@ namespace TecnoGo.Layers.DAL
                 command.Parameters.AddWithValue("@Caracteristicas", pProducto.Caracteristicas);
                 command.Parameters.AddWithValue("@Extras", pProducto.Extras);
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
-                command.Parameters.AddWithValue("@DocumentoEspecificaciones", pProducto.DocumentoEspecificaciones);
+                command.Parameters.AddWithValue("@Documento", pProducto.Documento);
                 command.Parameters.AddWithValue("@CantidadStock", pProducto.CantidadStock);
                 command.Parameters.AddWithValue("@Precio", pProducto.Precio);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado.ToString());
@@ -312,7 +322,7 @@ namespace TecnoGo.Layers.DAL
                         Caracteristicas = @Caracteristicas,
                         Extras = @Extras,
                         Fotografia = @Fotografia,
-                        DocumentoEspecificaciones = @DocumentoEspecificaciones,
+                        Documento = @Documento,
                         CantidadStock = @CantidadStock,
                         Precio = @Precio,
                         Estado = @Estado
@@ -330,7 +340,7 @@ namespace TecnoGo.Layers.DAL
                 command.Parameters.AddWithValue("@Caracteristicas", pProducto.Caracteristicas);
                 command.Parameters.AddWithValue("@Extras", pProducto.Extras);
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
-                command.Parameters.AddWithValue("@DocumentoEspecificaciones", pProducto.DocumentoEspecificaciones);
+                command.Parameters.AddWithValue("@Documento", pProducto.Documento);
                 command.Parameters.AddWithValue("@CantidadStock", pProducto.CantidadStock);
                 command.Parameters.AddWithValue("@Precio", pProducto.Precio);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado.ToString());
