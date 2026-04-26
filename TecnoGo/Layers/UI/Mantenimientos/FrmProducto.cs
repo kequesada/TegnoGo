@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -66,23 +67,16 @@ namespace TecnoGo.Layers.UI.Mantenimientos
             pbImagen.Image = TecnoGo.Properties.Resources.imagenG;
             pbImagen.Tag = TecnoGo.Properties.Resources.imagenG;
 
-            if (pbDocumento.Image != TecnoGo.Properties.Resources.documentoG)
-                pbDocumento.Image.Dispose();
-
-            pbDocumento.Image = TecnoGo.Properties.Resources.documentoG;
-            pbDocumento.Tag = TecnoGo.Properties.Resources.documentoG;
-
-
             this.txtIdProducto.Enabled = false;
             this.txtNombre.Enabled = false;
             this.txtModelo.Enabled = false;
             this.txtCaracteristicas.Enabled = false;
             this.txtExtras.Enabled = false;
             this.txtPrecio.Enabled = false;
+            this.txtCantidad.Enabled = false;
 
             this.btnAceptar.Enabled = false;
             this.btnCancelar.Enabled = false;
-            this.numCantidad.Enabled = false;
 
             this.cmbMarca.Enabled = false;
             this.cmbDispositivo.Enabled = false;
@@ -91,7 +85,8 @@ namespace TecnoGo.Layers.UI.Mantenimientos
             this.cmbEstado.Enabled = false;
            
             this.pbImagen.Enabled = false;
-            this.pbDocumento.Enabled = false;
+            this.btnDocumento.Enabled = false;
+            this.btnVerDoc.Enabled = false;
 
             // Coloca el primer item por defecto
             if (cmbMarca.Items.Count > 0)
@@ -114,10 +109,10 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                     this.txtCaracteristicas.Enabled = true;
                     this.txtExtras.Enabled = true;
                     this.txtPrecio.Enabled = true;
+                    this.txtCantidad.Enabled = true;
 
                     this.btnAceptar.Enabled = true;
                     this.btnCancelar.Enabled = true;
-                    this.numCantidad.Enabled = true;
 
                     this.cmbMarca.Enabled = true;
                     this.cmbDispositivo.Enabled = true;
@@ -126,7 +121,8 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                     this.cmbEstado.Enabled = true;
 
                     this.pbImagen.Enabled = true;
-                    this.pbDocumento.Enabled = true;
+                    this.btnDocumento.Enabled = true;
+                    this.btnVerDoc.Enabled = true;
 
                     txtIdProducto.Focus();
 
@@ -138,10 +134,10 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                     this.txtCaracteristicas.Enabled = true;
                     this.txtExtras.Enabled = true;
                     this.txtPrecio.Enabled = true;
+                    this.txtCantidad.Enabled = true;
 
                     this.btnAceptar.Enabled = true;
                     this.btnCancelar.Enabled = true;
-                    this.numCantidad.Enabled = true;
 
                     this.cmbMarca.Enabled = true;
                     this.cmbDispositivo.Enabled = true;
@@ -150,7 +146,8 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                     this.cmbEstado.Enabled = true;
 
                     this.pbImagen.Enabled = true;
-                    this.pbDocumento.Enabled = true;
+                    this.btnDocumento.Enabled = true;
+                    this.btnVerDoc.Enabled = true;
 
                     txtNombre.Focus();
 
@@ -180,13 +177,13 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 // Delay forzado
                 await Task.Delay(500);
 
-                /* Cargar el DataGridView
+                //Cargar el DataGridView
                 this.dgvDatos.DataSource = await bllProducto.GetAll();
 
                 dgvDatos.Columns["Fotografia"].Visible = false;
                 dgvDatos.Columns["Documento"].Visible = false;
                 dgvDatos.Columns["Caracteristicas"].Visible = false;
-                dgvDatos.Columns["Extras"].Visible = false;*/
+                dgvDatos.Columns["Extras"].Visible = false;
 
                 // Cargar los combos
                 List<Marca> listaMarcas = (List<Marca>)await bllMarca.GetAll();
@@ -202,7 +199,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 cmbDispositivo.SelectedIndex = 0;
 
                 List<Proveedor> listaProveedores = (List<Proveedor>)await bllProveedor.GetAll();
-                cmbProveedor.DataSource = listaDispositivos;
+                cmbProveedor.DataSource = listaProveedores;
                 cmbProveedor.DisplayMember = "Nombre";
                 cmbProveedor.ValueMember = "IdProveedor";
                 cmbProveedor.SelectedIndex = 0;
@@ -249,39 +246,39 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                 oProducto.Id = int.Parse(this.txtIdProducto.Text);
                 oProducto.Nombre = this.txtNombre.Text;
-                oProducto.IdMarca = (Marca)cmbMarca.SelectedItem;
-                
-                oCliente.Apellido1 = this.txtApellido1.Text;
-                oCliente.Apellido2 = this.txtApellido2.Text;
-
-                if (rdbMasculino.Checked)
-                {
-                    oCliente.Sexo = "Masculino";
-                }
-                else if (rdbFemenino.Checked)
-                {
-                    oCliente.Sexo = "Femenino";
-                }
-
-                oCliente.Correo = this.txtCorreo.Text;
-                oCliente.Telefono = this.txtTelefono.Text;
-                oCliente.Provincia = cmbProvincia.Text;
-                oCliente.Direccion = this.txtDireccion.Text;
-                oCliente.Estado = (EstadoGeneral)cmbEstado.SelectedItem;
+                oProducto.IdMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+                oProducto.Modelo = this.txtModelo.Text;
+                oProducto.IdTipoDispositivo = Convert.ToInt32(cmbDispositivo.SelectedValue);
+                oProducto.IdProveedor = Convert.ToInt32(cmbProveedor.SelectedValue);
+                oProducto.Color = (Colores)cmbColor.SelectedItem;
+                oProducto.Caracteristicas = this.txtCaracteristicas.Text;
+                oProducto.Extras = this.txtExtras.Text;
+                oProducto.CantidadStock = int.Parse(this.txtCantidad.Text);
+                oProducto.Precio = double.Parse(this.txtPrecio.Text);
+                oProducto.Estado = (EstadoGeneral)cmbEstado.SelectedItem;
 
                 if (pbImagen.Tag != TecnoGo.Properties.Resources.imagenG)
                 {
-                    oCliente.Fotografia = (byte[])pbImagen.Tag;
+                    oProducto.Fotografia = (byte[])pbImagen.Tag;
                 }
                 else
                 {
-                    oCliente.Fotografia = null;
+                    oProducto.Fotografia = null;
                 }
 
-                oCliente = await bllCliente.Save(oCliente);
+                if (btnDocumento.Tag is byte[] archivo && archivo.Length > 0)
+                {
+                    oProducto.Documento = archivo;
+                }
+                else
+                {
+                    oProducto.Documento = null;
+                }
+
+                oProducto = await bllProducto.Save(oProducto);
 
 
-                if (oCliente != null)
+                if (oProducto != null)
                     this.LoadData();
 
             }
@@ -291,6 +288,152 @@ namespace TecnoGo.Layers.UI.Mantenimientos
                 _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
                 MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private async void btnBorrar_Click(object sender, EventArgs e)
+        {
+            IProductoBLL bllProducto = new ProductoBLL();
+
+            try
+            {
+                if (this.dgvDatos.SelectedRows.Count > 0)
+                {
+                    this.ChangeState(EstadoMantenimiento.Borrar);
+
+                    Producto oProducto = this.dgvDatos.SelectedRows[0].DataBoundItem as Producto;
+                    if (MessageBox.Show($"¿Seguro que desea borrar el registro {oProducto.Id} {oProducto.Nombre.Trim()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        await bllProducto.Delete(oProducto.Id);
+                        this.LoadData();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el registro !", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Producto oProducto = null;
+            try
+            {
+                if (this.dgvDatos.SelectedRows.Count > 0)
+                {
+                    // Cambiar de estado
+                    this.ChangeState(EstadoMantenimiento.Editar);
+                    oProducto = this.dgvDatos.SelectedRows[0].DataBoundItem as Producto;
+
+                    this.txtIdProducto.Text = oProducto.Id.ToString();
+                    this.txtNombre.Text = oProducto.Nombre;
+                    cmbMarca.SelectedItem = oProducto.IdMarca;
+                    this.txtModelo.Text = oProducto.Modelo;
+                    cmbDispositivo.SelectedItem = oProducto.IdTipoDispositivo;
+                    cmbProveedor.SelectedItem = oProducto.IdProveedor;
+                    cmbColor.SelectedItem = oProducto.Color;
+                    this.txtCaracteristicas.Text = oProducto.Caracteristicas;
+                    this.txtExtras.Text = oProducto.Extras;
+                    this.txtCantidad.Text = oProducto.CantidadStock.ToString();
+                    this.txtPrecio.Text = oProducto.Precio.ToString();
+                    cmbEstado.SelectedItem = oProducto.Estado;
+
+                    this.pbImagen.Image = new Bitmap(new MemoryStream(oProducto.Fotografia));
+                    this.pbImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                    this.pbImagen.Tag = oProducto.Fotografia;
+
+                    if (oProducto.Documento != null)
+                    {
+                        btnDocumento.Tag = oProducto.Documento;
+                        lblDocumento.Text = "Documento cargado";
+                    }
+                    else
+                    {
+                        btnDocumento.Tag = null;
+                        lblDocumento.Text = "Sin documento";
+                    }  
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el registro !", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void pbImagen_Click(object sender, EventArgs e)
+        {
+             try
+            {
+                OpenFileDialog opt = new OpenFileDialog();
+                opt.Title = "Seleccione la Imagen ";
+                opt.SupportMultiDottedExtensions = true;
+                opt.DefaultExt = "*.jpg";
+                opt.Filter = "Archivos de Imagenes (*.jpg)|*.jpg| All files (*.*)|*.*";
+                opt.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                opt.FileName = "";
+
+                if (opt.ShowDialog(this) == DialogResult.OK)
+                {
+                    //ruta = opt.FileName.Trim();
+                    this.pbImagen.ImageLocation = opt.FileName;
+                    pbImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    byte[] cadenaBytes = File.ReadAllBytes(opt.FileName);
+
+                    // Guarla la imagenen Bytes en el Tag de la imagen.
+                    pbImagen.Tag = (byte[])cadenaBytes;
+                }
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDocumento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Title = "Seleccione el documento Word";
+                ofd.Filter = "Documentos Word (*.doc;*.docx)|*.doc;*.docx|Todos los archivos (*.*)|*.*";
+                ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                ofd.FileName = "";
+
+                if (ofd.ShowDialog(this) == DialogResult.OK)
+                {
+                    // Leer el archivo como byte[]
+                    byte[] archivoBytes = File.ReadAllBytes(ofd.FileName);
+
+                    // Guardarlo en el Tag
+                    btnDocumento.Tag = archivoBytes;
+
+                    // Mostrar el nombre del archivo
+                    lblDocumento.Text = Path.GetFileName(ofd.FileName);
+                }
+            }
+            catch (Exception er)
+            {
+                string msg = "";
+                _myLogControlEventos.ErrorFormat("Error {0}", msg.ToExceptionDetail(er, MethodBase.GetCurrentMethod()));
+                MessageBox.Show("Se ha producido el siguiente error: " + er.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -30,19 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             this.tspPrincipal = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.sttInferior = new System.Windows.Forms.StatusStrip();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pbDocumento = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
@@ -58,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.txtExtras = new System.Windows.Forms.TextBox();
             this.txtCaracteristicas = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,6 +59,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblDocumento = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnVerDoc = new System.Windows.Forms.Button();
+            this.btnDocumento = new System.Windows.Forms.Button();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -75,11 +77,9 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDocumento)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // tspPrincipal
@@ -96,40 +96,6 @@
             this.tspPrincipal.Size = new System.Drawing.Size(1511, 34);
             this.tspPrincipal.TabIndex = 8;
             this.tspPrincipal.Text = "toolStrip1";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(85, 29);
-            this.btnEditar.Text = "Editar";
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
-            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
-            this.btnBorrar.Text = "Borrar";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 29);
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // sttInferior
             // 
@@ -170,52 +136,17 @@
             this.splitContainer1.SplitterDistance = 545;
             this.splitContainer1.TabIndex = 20;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(291, 849);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 57);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(128, 849);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(121, 57);
-            this.btnAceptar.TabIndex = 23;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pbDocumento);
+            this.groupBox2.Controls.Add(this.btnVerDoc);
+            this.groupBox2.Controls.Add(this.lblDocumento);
+            this.groupBox2.Controls.Add(this.btnDocumento);
             this.groupBox2.Location = new System.Drawing.Point(291, 599);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(246, 244);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documento";
-            // 
-            // pbDocumento
-            // 
-            this.pbDocumento.Image = global::TecnoGo.Properties.Resources.documentoG;
-            this.pbDocumento.ImageLocation = "";
-            this.pbDocumento.Location = new System.Drawing.Point(58, 66);
-            this.pbDocumento.Name = "pbDocumento";
-            this.pbDocumento.Size = new System.Drawing.Size(128, 128);
-            this.pbDocumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbDocumento.TabIndex = 1;
-            this.pbDocumento.TabStop = false;
             // 
             // groupBox1
             // 
@@ -226,16 +157,6 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fotografía";
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
-            this.pbImagen.Location = new System.Drawing.Point(58, 66);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(128, 128);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbImagen.TabIndex = 0;
-            this.pbImagen.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -257,7 +178,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtPrecio, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.numCantidad, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.txtExtras, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.txtCaracteristicas, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 11);
@@ -267,6 +187,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.cmbColor, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtCantidad, 1, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
@@ -413,13 +334,6 @@
             this.txtPrecio.Size = new System.Drawing.Size(207, 26);
             this.txtPrecio.TabIndex = 47;
             // 
-            // numCantidad
-            // 
-            this.numCantidad.Location = new System.Drawing.Point(184, 444);
-            this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Size = new System.Drawing.Size(120, 26);
-            this.numCantidad.TabIndex = 46;
-            // 
             // txtExtras
             // 
             this.txtExtras.Location = new System.Drawing.Point(184, 395);
@@ -508,6 +422,111 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Color";
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(184, 444);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(207, 26);
+            this.txtCantidad.TabIndex = 55;
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(99, 118);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(0, 20);
+            this.lblDocumento.TabIndex = 26;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(291, 849);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 72);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
+            this.btnAceptar.Location = new System.Drawing.Point(109, 849);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(140, 72);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnVerDoc
+            // 
+            this.btnVerDoc.Image = global::TecnoGo.Properties.Resources.ver;
+            this.btnVerDoc.Location = new System.Drawing.Point(84, 159);
+            this.btnVerDoc.Name = "btnVerDoc";
+            this.btnVerDoc.Size = new System.Drawing.Size(75, 69);
+            this.btnVerDoc.TabIndex = 27;
+            this.btnVerDoc.UseVisualStyleBackColor = true;
+            // 
+            // btnDocumento
+            // 
+            this.btnDocumento.Image = global::TecnoGo.Properties.Resources.documento;
+            this.btnDocumento.Location = new System.Drawing.Point(84, 25);
+            this.btnDocumento.Name = "btnDocumento";
+            this.btnDocumento.Size = new System.Drawing.Size(75, 69);
+            this.btnDocumento.TabIndex = 25;
+            this.btnDocumento.UseVisualStyleBackColor = true;
+            this.btnDocumento.Click += new System.EventHandler(this.btnDocumento_Click);
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
+            this.pbImagen.Location = new System.Drawing.Point(18, 38);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(128, 128);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbImagen.TabIndex = 0;
+            this.pbImagen.TabStop = false;
+            this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(85, 29);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
+            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(73, 29);
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -532,13 +551,11 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDocumento)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,7 +575,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pbDocumento;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -576,7 +592,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.NumericUpDown numCantidad;
         private System.Windows.Forms.TextBox txtExtras;
         private System.Windows.Forms.TextBox txtCaracteristicas;
         private System.Windows.Forms.Label label14;
@@ -586,5 +601,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Button btnDocumento;
+        private System.Windows.Forms.Button btnVerDoc;
+        private System.Windows.Forms.Label lblDocumento;
     }
 }

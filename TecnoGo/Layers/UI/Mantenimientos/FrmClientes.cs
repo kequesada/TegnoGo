@@ -179,6 +179,7 @@ namespace TecnoGo.Layers.UI.Mantenimientos
 
                     this.btnAceptar.Enabled = true;
                     this.btnCancelar.Enabled = true;
+                    this.btnBuscar.Enabled = false;
                     this.cmbProvincia.Enabled = true;
                     this.cmbEstado.Enabled = true;
                     this.rdbFemenino.Enabled = true;
