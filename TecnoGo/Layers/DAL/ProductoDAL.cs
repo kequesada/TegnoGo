@@ -64,7 +64,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,Documento,
+                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
                                   CantidadStock,Precio,Estado
                            from Producto WITH (NOLOCK)";
                 command.CommandText = sql;
@@ -90,7 +90,7 @@ namespace TecnoGo.Layers.DAL
                             oProducto.Caracteristicas = reader["Caracteristicas"].ToString();
                             oProducto.Extras = reader["Extras"].ToString();
                             oProducto.Fotografia = reader["Fotografia"] as byte[];
-                            oProducto.Documento = reader["Documento"] as byte[];
+                            oProducto.Documento = reader["DocumentoEspecificaciones"] as byte[];
                             oProducto.CantidadStock = int.Parse(reader["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(reader["Precio"].ToString());
 
@@ -128,7 +128,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,Documento,
+                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
                                   CantidadStock,Precio,Estado
                            from Producto WITH (NOLOCK)
                            Where Nombre like @filtro";
@@ -160,7 +160,7 @@ namespace TecnoGo.Layers.DAL
                         oProducto.Caracteristicas = dr["Caracteristicas"].ToString();
                         oProducto.Extras = dr["Extras"].ToString();
                         oProducto.Fotografia = dr["Fotografia"] as byte[];
-                        oProducto.Documento = dr["Documento"] as byte[];
+                        oProducto.Documento = dr["DocumentoEspecificaciones"] as byte[];
                         oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                         oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
@@ -195,7 +195,7 @@ namespace TecnoGo.Layers.DAL
             try
             {
                 string sql = @"Select Id,Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,Color,
-                                  Caracteristicas,Extras,Fotografia,Documento,
+                                  Caracteristicas,Extras,Fotografia,DocumentoEspecificaciones,
                                   CantidadStock,Precio,Estado
                            from Producto Where Id = @Id";
 
@@ -223,7 +223,7 @@ namespace TecnoGo.Layers.DAL
                             oProducto.Caracteristicas = dr["Caracteristicas"].ToString();
                             oProducto.Extras = dr["Extras"].ToString();
                             oProducto.Fotografia = dr["Fotografia"] as byte[];
-                            oProducto.Documento = dr["Documento"] as byte[];
+                            oProducto.Documento = dr["DocumentoEspecificaciones"] as byte[];
                             oProducto.CantidadStock = int.Parse(dr["CantidadStock"].ToString());
                             oProducto.Precio = double.Parse(dr["Precio"].ToString());
 
@@ -256,10 +256,10 @@ namespace TecnoGo.Layers.DAL
 
             string sql = @"Insert into Producto(Nombre,IdTipoDispositivo,IdMarca,Modelo,IdProveedor,
                                             Color,Caracteristicas,Extras,Fotografia,
-                                            Documento,CantidadStock,Precio,Estado)
+                                            DocumentoEspecificaciones,CantidadStock,Precio,Estado)
                        values (@Nombre,@IdTipoDispositivo,@IdMarca,@Modelo,@IdProveedor,
                                @Color,@Caracteristicas,@Extras,@Fotografia,
-                               @Documento,@CantidadStock,@Precio,@Estado)";
+                               @DocumentoEspecificaciones,@CantidadStock,@Precio,@Estado)";
 
             try
             {
@@ -272,7 +272,7 @@ namespace TecnoGo.Layers.DAL
                 command.Parameters.AddWithValue("@Caracteristicas", pProducto.Caracteristicas);
                 command.Parameters.AddWithValue("@Extras", pProducto.Extras);
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
-                command.Parameters.AddWithValue("@Documento", pProducto.Documento);
+                command.Parameters.AddWithValue("@DocumentoEspecificaciones", pProducto.Documento);
                 command.Parameters.AddWithValue("@CantidadStock", pProducto.CantidadStock);
                 command.Parameters.AddWithValue("@Precio", pProducto.Precio);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado.ToString());
@@ -322,7 +322,7 @@ namespace TecnoGo.Layers.DAL
                         Caracteristicas = @Caracteristicas,
                         Extras = @Extras,
                         Fotografia = @Fotografia,
-                        Documento = @Documento,
+                        DocumentoEspecificaciones = @DocumentoEspecificaciones,
                         CantidadStock = @CantidadStock,
                         Precio = @Precio,
                         Estado = @Estado

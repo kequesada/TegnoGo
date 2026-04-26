@@ -19,7 +19,7 @@ namespace TecnoGo.Layers.Entities
         public string Caracteristicas { set; get; }
         public string Extras { set; get; }
         public byte[] Fotografia { set; get; }
-        public byte[] Documento { set; get; }
+        public byte[] DocumentoEspecificaciones { set; get; }
         public int CantidadStock { set; get; }
         public double Precio { set; get; }
         public EstadoGeneral Estado { set; get; }

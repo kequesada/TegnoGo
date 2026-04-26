@@ -30,11 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             this.tspPrincipal = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.sttInferior = new System.Windows.Forms.StatusStrip();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnVerDoc = new System.Windows.Forms.Button();
+            this.lblDocumento = new System.Windows.Forms.Label();
+            this.btnDocumento = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
@@ -60,16 +70,6 @@
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.lblDocumento = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnVerDoc = new System.Windows.Forms.Button();
-            this.btnDocumento = new System.Windows.Forms.Button();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnBorrar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.tspPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -78,8 +78,8 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tspPrincipal
@@ -96,6 +96,38 @@
             this.tspPrincipal.Size = new System.Drawing.Size(1511, 34);
             this.tspPrincipal.TabIndex = 8;
             this.tspPrincipal.Text = "toolStrip1";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(85, 29);
+            this.btnEditar.Text = "Editar";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
+            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
+            this.btnBorrar.Text = "Borrar";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
+            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(73, 29);
+            this.btnSalir.Text = "Salir";
             // 
             // sttInferior
             // 
@@ -136,6 +168,28 @@
             this.splitContainer1.SplitterDistance = 545;
             this.splitContainer1.TabIndex = 20;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(291, 849);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 72);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
+            this.btnAceptar.Location = new System.Drawing.Point(109, 849);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(140, 72);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnVerDoc);
@@ -148,6 +202,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documento";
             // 
+            // btnVerDoc
+            // 
+            this.btnVerDoc.Image = global::TecnoGo.Properties.Resources.ver;
+            this.btnVerDoc.Location = new System.Drawing.Point(84, 159);
+            this.btnVerDoc.Name = "btnVerDoc";
+            this.btnVerDoc.Size = new System.Drawing.Size(75, 69);
+            this.btnVerDoc.TabIndex = 27;
+            this.btnVerDoc.UseVisualStyleBackColor = true;
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(99, 118);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(0, 20);
+            this.lblDocumento.TabIndex = 26;
+            // 
+            // btnDocumento
+            // 
+            this.btnDocumento.Image = global::TecnoGo.Properties.Resources.documento;
+            this.btnDocumento.Location = new System.Drawing.Point(84, 25);
+            this.btnDocumento.Name = "btnDocumento";
+            this.btnDocumento.Size = new System.Drawing.Size(75, 69);
+            this.btnDocumento.TabIndex = 25;
+            this.btnDocumento.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pbImagen);
@@ -157,6 +237,16 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fotografía";
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
+            this.pbImagen.Location = new System.Drawing.Point(18, 38);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(128, 128);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbImagen.TabIndex = 0;
+            this.pbImagen.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -429,104 +519,6 @@
             this.txtCantidad.Size = new System.Drawing.Size(207, 26);
             this.txtCantidad.TabIndex = 55;
             // 
-            // lblDocumento
-            // 
-            this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(99, 118);
-            this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(0, 20);
-            this.lblDocumento.TabIndex = 26;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::TecnoGo.Properties.Resources.cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(291, 849);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(141, 72);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Image = global::TecnoGo.Properties.Resources.aceptar;
-            this.btnAceptar.Location = new System.Drawing.Point(109, 849);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(140, 72);
-            this.btnAceptar.TabIndex = 23;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnVerDoc
-            // 
-            this.btnVerDoc.Image = global::TecnoGo.Properties.Resources.ver;
-            this.btnVerDoc.Location = new System.Drawing.Point(84, 159);
-            this.btnVerDoc.Name = "btnVerDoc";
-            this.btnVerDoc.Size = new System.Drawing.Size(75, 69);
-            this.btnVerDoc.TabIndex = 27;
-            this.btnVerDoc.UseVisualStyleBackColor = true;
-            // 
-            // btnDocumento
-            // 
-            this.btnDocumento.Image = global::TecnoGo.Properties.Resources.documento;
-            this.btnDocumento.Location = new System.Drawing.Point(84, 25);
-            this.btnDocumento.Name = "btnDocumento";
-            this.btnDocumento.Size = new System.Drawing.Size(75, 69);
-            this.btnDocumento.TabIndex = 25;
-            this.btnDocumento.UseVisualStyleBackColor = true;
-            this.btnDocumento.Click += new System.EventHandler(this.btnDocumento_Click);
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.Image = global::TecnoGo.Properties.Resources.imagenG;
-            this.pbImagen.Location = new System.Drawing.Point(18, 38);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(128, 128);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbImagen.TabIndex = 0;
-            this.pbImagen.TabStop = false;
-            this.pbImagen.Click += new System.EventHandler(this.pbImagen_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::TecnoGo.Properties.Resources.agregar;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::TecnoGo.Properties.Resources.editar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(85, 29);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Image = global::TecnoGo.Properties.Resources.eliminar;
-            this.btnBorrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 29);
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::TecnoGo.Properties.Resources.salir;
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(73, 29);
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -541,7 +533,6 @@
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Producto";
-            this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -553,9 +544,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
