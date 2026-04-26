@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             this.tspPrincipal = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnBorrar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.sttInferior = new System.Windows.Forms.StatusStrip();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -70,8 +68,8 @@
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.tspPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,6 +78,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // tspPrincipal
@@ -93,8 +92,8 @@
             this.btnSalir});
             this.tspPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tspPrincipal.Name = "tspPrincipal";
-            this.tspPrincipal.Size = new System.Drawing.Size(1511, 34);
-            this.tspPrincipal.TabIndex = 8;
+            this.tspPrincipal.Size = new System.Drawing.Size(1520, 34);
+            this.tspPrincipal.TabIndex = 9;
             this.tspPrincipal.Text = "toolStrip1";
             // 
             // btnNuevo
@@ -132,25 +131,15 @@
             // sttInferior
             // 
             this.sttInferior.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sttInferior.Location = new System.Drawing.Point(0, 994);
+            this.sttInferior.Location = new System.Drawing.Point(0, 986);
             this.sttInferior.Name = "sttInferior";
-            this.sttInferior.Size = new System.Drawing.Size(1511, 22);
-            this.sttInferior.TabIndex = 9;
+            this.sttInferior.Size = new System.Drawing.Size(1520, 22);
+            this.sttInferior.TabIndex = 10;
             this.sttInferior.Text = "statusStrip1";
-            // 
-            // dgvDatos
-            // 
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(3, 3);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.RowHeadersWidth = 62;
-            this.dgvDatos.RowTemplate.Height = 28;
-            this.dgvDatos.Size = new System.Drawing.Size(934, 590);
-            this.dgvDatos.TabIndex = 11;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(12, 52);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 46);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -166,7 +155,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvDatos);
             this.splitContainer1.Size = new System.Drawing.Size(1489, 921);
             this.splitContainer1.SplitterDistance = 545;
-            this.splitContainer1.TabIndex = 20;
+            this.splitContainer1.TabIndex = 21;
             // 
             // btnCancelar
             // 
@@ -519,23 +508,28 @@
             this.txtCantidad.Size = new System.Drawing.Size(207, 26);
             this.txtCantidad.TabIndex = 55;
             // 
+            // dgvDatos
+            // 
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(3, 3);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersWidth = 62;
+            this.dgvDatos.RowTemplate.Height = 28;
+            this.dgvDatos.Size = new System.Drawing.Size(934, 590);
+            this.dgvDatos.TabIndex = 11;
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1511, 1016);
+            this.ClientSize = new System.Drawing.Size(1520, 1008);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.sttInferior);
             this.Controls.Add(this.tspPrincipal);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProducto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento Producto";
+            this.Text = "FrmProducto";
             this.tspPrincipal.ResumeLayout(false);
             this.tspPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -547,6 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,12 +555,13 @@
         private System.Windows.Forms.ToolStripButton btnBorrar;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.StatusStrip sttInferior;
-        private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnVerDoc;
+        private System.Windows.Forms.Label lblDocumento;
+        private System.Windows.Forms.Button btnDocumento;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -593,8 +589,6 @@
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Button btnDocumento;
-        private System.Windows.Forms.Button btnVerDoc;
-        private System.Windows.Forms.Label lblDocumento;
+        private System.Windows.Forms.DataGridView dgvDatos;
     }
 }
