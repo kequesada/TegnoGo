@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSeguridad));
             this.tspBarraPrincipal = new System.Windows.Forms.ToolStrip();
             this.toolStripBtnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -37,7 +38,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tplPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
@@ -48,6 +49,12 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.trvUsuarios = new System.Windows.Forms.TreeView();
+            this.imgListaTreeView = new System.Windows.Forms.ImageList(this.components);
+            this.ntfMensaje = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmdMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tspBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -55,6 +62,8 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tplPanel.SuspendLayout();
+            this.cmdMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // tspBarraPrincipal
@@ -69,7 +78,6 @@
             this.tspBarraPrincipal.Size = new System.Drawing.Size(889, 41);
             this.tspBarraPrincipal.TabIndex = 2;
             this.tspBarraPrincipal.Text = "toolStrip1";
-            this.tspBarraPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tspBarraPrincipal_ItemClicked);
             // 
             // toolStripBtnNuevo
             // 
@@ -79,6 +87,7 @@
             this.toolStripBtnNuevo.Name = "toolStripBtnNuevo";
             this.toolStripBtnNuevo.Size = new System.Drawing.Size(100, 36);
             this.toolStripBtnNuevo.Text = "&Nuevo";
+            this.toolStripBtnNuevo.Click += new System.EventHandler(this.toolStripBtnNuevo_Click);
             // 
             // toolStripBtnSalvarUsuario
             // 
@@ -88,6 +97,7 @@
             this.toolStripBtnSalvarUsuario.Name = "toolStripBtnSalvarUsuario";
             this.toolStripBtnSalvarUsuario.Size = new System.Drawing.Size(111, 36);
             this.toolStripBtnSalvarUsuario.Text = "&Guardar";
+            this.toolStripBtnSalvarUsuario.Click += new System.EventHandler(this.toolStripBtnSalvarUsuario_Click);
             // 
             // toolStripBtnSalir
             // 
@@ -97,6 +107,7 @@
             this.toolStripBtnSalir.Name = "toolStripBtnSalir";
             this.toolStripBtnSalir.Size = new System.Drawing.Size(81, 36);
             this.toolStripBtnSalir.Text = "Sa&lir";
+            this.toolStripBtnSalir.Click += new System.EventHandler(this.toolStripBtnSalir_Click);
             // 
             // sttBarraInferior
             // 
@@ -144,7 +155,7 @@
             this.tplPanel.ColumnCount = 2;
             this.tplPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tplPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tplPanel.Controls.Add(this.comboBox1, 1, 4);
+            this.tplPanel.Controls.Add(this.cmbEstado, 1, 4);
             this.tplPanel.Controls.Add(this.label1, 0, 4);
             this.tplPanel.Controls.Add(this.lblLogin, 0, 0);
             this.tplPanel.Controls.Add(this.txtLogin, 1, 0);
@@ -166,16 +177,16 @@
             this.tplPanel.Size = new System.Drawing.Size(388, 227);
             this.tplPanel.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbEstado
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(104, 189);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 28);
-            this.comboBox1.TabIndex = 10;
+            this.cmbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(104, 189);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(284, 28);
+            this.cmbEstado.TabIndex = 10;
             // 
             // label1
             // 
@@ -278,6 +289,40 @@
             this.trvUsuarios.Name = "trvUsuarios";
             this.trvUsuarios.Size = new System.Drawing.Size(476, 283);
             this.trvUsuarios.TabIndex = 12;
+            this.trvUsuarios.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvUsuarios_AfterSelect);
+            // 
+            // imgListaTreeView
+            // 
+            this.imgListaTreeView.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListaTreeView.ImageStream")));
+            this.imgListaTreeView.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListaTreeView.Images.SetKeyName(0, "database.jpg");
+            this.imgListaTreeView.Images.SetKeyName(1, "userdatabase.png");
+            // 
+            // cmdMenu
+            // 
+            this.cmdMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmdMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.borrarToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.cmdMenu.Name = "cmdMenu";
+            this.cmdMenu.Size = new System.Drawing.Size(133, 68);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // epError
+            // 
+            this.epError.ContainerControl = this;
             // 
             // FrmSeguridad
             // 
@@ -292,6 +337,7 @@
             this.Name = "FrmSeguridad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creación de usuarios del sistema";
+            this.Load += new System.EventHandler(this.FrmSeguridad_Load);
             this.tspBarraPrincipal.ResumeLayout(false);
             this.tspBarraPrincipal.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -302,6 +348,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tplPanel.ResumeLayout(false);
             this.tplPanel.PerformLayout();
+            this.cmdMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +365,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tplPanel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtLogin;
@@ -328,5 +376,11 @@
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.TreeView trvUsuarios;
+        private System.Windows.Forms.ImageList imgListaTreeView;
+        private System.Windows.Forms.NotifyIcon ntfMensaje;
+        private System.Windows.Forms.ContextMenuStrip cmdMenu;
+        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }
